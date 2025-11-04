@@ -14,7 +14,8 @@ Ce projet utilise **Ollama**, une solution d'IA locale qui vous permet de :
 
 - ✨ **Analyse automatique** des offres d'emploi avec IA locale (Ollama)
 - 🎨 **Personnalisation intelligente** du CV en fonction du poste
-- 📝 **2 templates professionnels** (Modern & Professional)
+- 📄 **Optimisation 1 page** - CV condensés et impactants (max 2 expériences, 2 projets, 8 compétences)
+- 📝 **2 templates professionnels** optimisés (Modern & Professional)
 - 🎨 **Détection automatique** des couleurs de marque de l'entreprise
 - 📄 **Génération PDF** haute qualité (compatible ATS)
 - 🖥️ **Interface web intuitive** avec Streamlit
@@ -126,6 +127,33 @@ L'application s'ouvrira automatiquement dans votre navigateur (http://localhost:
 
 - **Modern** : Design moderne avec sidebar colorée (idéal pour tech/créatif)
 - **Professional** : Design classique et élégant (parfait pour corporate)
+
+## 📄 Optimisation CV 1 Page
+
+Le système génère automatiquement des CV condensés et impactants qui tiennent sur **une seule page** :
+
+### Condensation intelligente
+
+- **Expériences** : Maximum 2 expériences les plus pertinentes avec 4 points clés chacune
+- **Projets** : Maximum 2 projets avec 3 réalisations principales
+- **Compétences** : Top 8 compétences prioritaires pour le poste
+- **Points forts** : 3 atouts ultra-concis (max 10 mots chacun)
+- **Résumé** : 2 phrases maximum (40 mots) directes et percutantes
+
+### Optimisation typographique
+
+- **Polices réduites** : 8-9pt pour maximiser l'espace
+- **Espacement compact** : Marges et interlignes optimisés
+- **Hiérarchie visuelle** : Mise en page dense mais lisible
+- **Compatible ATS** : Structure claire pour les systèmes de recrutement
+
+### Comment ça marche ?
+
+1. **L'IA sélectionne** les expériences et projets les plus pertinents pour le poste
+2. **Le moteur de condensation** réduit automatiquement le contenu (textes, bullets, listes)
+3. **Les templates optimisés** affichent tout sur une page avec une mise en forme professionnelle
+
+**Résultat** : Un CV percutant d'une page qui met en avant l'essentiel pour chaque poste !
 
 ## 🤖 Modèles d'IA Recommandés
 
