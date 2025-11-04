@@ -1,0 +1,209 @@
+{
+  "personal_info": {
+    "first_name": "Jean",
+    "last_name": "Dupont",
+    "title": "Développeur Full Stack",
+    "email": "jean.dupont@email.com",
+    "phone": "+33 6 12 34 56 78",
+    "location": "Paris, France",
+    "linkedin": "linkedin.com/in/jeandupont",
+    "github": "github.com/jeandupont",
+    "portfolio": "jeandupont.dev",
+    "summary": "Développeur passionné avec 5 ans d'expérience dans le développement web moderne. Expert en JavaScript/TypeScript et Python, avec une forte orientation résultats et une capacité à travailler en équipe agile."
+  },
+  "experiences": [
+    {
+      "id": "exp1",
+      "company": "TechCorp",
+      "position": "Développeur Full Stack Senior",
+      "location": "Paris, France",
+      "start_date": "2021-03",
+      "end_date": null,
+      "current": true,
+      "description": "Développement et maintenance d'applications web à grande échelle",
+      "achievements": [
+        "Développement d'une plateforme SaaS servant plus de 10,000 utilisateurs actifs",
+        "Réduction du temps de chargement de 40% grâce à l'optimisation du backend",
+        "Migration complète de l'architecture monolithique vers microservices",
+        "Mise en place de CI/CD avec GitHub Actions et Docker",
+        "Mentorat de 3 développeurs juniors"
+      ],
+      "technologies": ["React", "Node.js", "TypeScript", "PostgreSQL", "Docker", "AWS", "Redis", "GraphQL"]
+    },
+    {
+      "id": "exp2",
+      "company": "StartupXYZ",
+      "position": "Développeur Frontend",
+      "location": "Lyon, France",
+      "start_date": "2019-06",
+      "end_date": "2021-02",
+      "current": false,
+      "description": "Développement d'interfaces utilisateur modernes et responsive",
+      "achievements": [
+        "Création de l'interface utilisateur complète d'une application e-commerce",
+        "Implémentation d'un design system réutilisable avec Storybook",
+        "Amélioration du score Lighthouse de 65 à 95",
+        "Intégration de tests E2E avec Cypress"
+      ],
+      "technologies": ["Vue.js", "JavaScript", "SASS", "Webpack", "Jest", "Cypress"]
+    },
+    {
+      "id": "exp3",
+      "company": "Digital Agency",
+      "position": "Développeur Web Junior",
+      "location": "Paris, France",
+      "start_date": "2018-01",
+      "end_date": "2019-05",
+      "current": false,
+      "description": "Développement de sites web et applications pour divers clients",
+      "achievements": [
+        "Développement de 15+ sites web pour des clients variés",
+        "Création de thèmes WordPress personnalisés",
+        "Intégration d'APIs tierces (Stripe, Mailchimp, Google Maps)",
+        "Support technique et maintenance client"
+      ],
+      "technologies": ["PHP", "WordPress", "jQuery", "MySQL", "HTML5", "CSS3", "Bootstrap"]
+    }
+  ],
+  "skills": {
+    "frontend": [
+      {"name": "React", "level": "expert", "years": 4},
+      {"name": "Vue.js", "level": "advanced", "years": 3},
+      {"name": "TypeScript", "level": "expert", "years": 3},
+      {"name": "JavaScript", "level": "expert", "years": 5},
+      {"name": "HTML5/CSS3", "level": "expert", "years": 5},
+      {"name": "Tailwind CSS", "level": "advanced", "years": 2},
+      {"name": "Next.js", "level": "advanced", "years": 2},
+      {"name": "Redux", "level": "advanced", "years": 3}
+    ],
+    "backend": [
+      {"name": "Node.js", "level": "expert", "years": 4},
+      {"name": "Python", "level": "advanced", "years": 3},
+      {"name": "Express.js", "level": "expert", "years": 4},
+      {"name": "FastAPI", "level": "advanced", "years": 2},
+      {"name": "GraphQL", "level": "advanced", "years": 2},
+      {"name": "REST API", "level": "expert", "years": 5}
+    ],
+    "database": [
+      {"name": "PostgreSQL", "level": "advanced", "years": 4},
+      {"name": "MongoDB", "level": "advanced", "years": 3},
+      {"name": "Redis", "level": "intermediate", "years": 2},
+      {"name": "MySQL", "level": "advanced", "years": 4}
+    ],
+    "devops": [
+      {"name": "Docker", "level": "advanced", "years": 3},
+      {"name": "AWS", "level": "intermediate", "years": 2},
+      {"name": "CI/CD", "level": "advanced", "years": 3},
+      {"name": "GitHub Actions", "level": "advanced", "years": 2},
+      {"name": "Kubernetes", "level": "beginner", "years": 1},
+      {"name": "Nginx", "level": "intermediate", "years": 2}
+    ],
+    "tools": [
+      {"name": "Git", "level": "expert", "years": 5},
+      {"name": "VS Code", "level": "expert", "years": 5},
+      {"name": "Jira", "level": "advanced", "years": 4},
+      {"name": "Figma", "level": "intermediate", "years": 2},
+      {"name": "Postman", "level": "advanced", "years": 4}
+    ],
+    "methodologies": [
+      {"name": "Agile/Scrum", "level": "advanced", "years": 4},
+      {"name": "TDD", "level": "intermediate", "years": 2},
+      {"name": "Microservices", "level": "advanced", "years": 2},
+      {"name": "Clean Code", "level": "advanced", "years": 3}
+    ]
+  },
+  "projects": [
+    {
+      "id": "proj1",
+      "name": "AI Task Manager",
+      "description": "Application de gestion de tâches avec suggestions IA",
+      "role": "Lead Developer",
+      "technologies": ["React", "Python", "FastAPI", "OpenAI API", "PostgreSQL"],
+      "achievements": [
+        "Développement complet d'une app de gestion de tâches intelligente",
+        "Intégration de l'API OpenAI pour suggestions automatiques",
+        "Plus de 1000 utilisateurs en 3 mois",
+        "Architecture scalable avec FastAPI et React"
+      ],
+      "url": "https://github.com/jeandupont/ai-task-manager",
+      "highlights": true
+    },
+    {
+      "id": "proj2",
+      "name": "E-commerce Platform",
+      "description": "Plateforme e-commerce complète avec paiement intégré",
+      "role": "Full Stack Developer",
+      "technologies": ["Next.js", "Node.js", "Stripe", "MongoDB", "Tailwind CSS"],
+      "achievements": [
+        "Développement d'une boutique en ligne complète",
+        "Intégration de Stripe pour les paiements",
+        "Tableau de bord admin avec analytics",
+        "Responsive et optimisé SEO"
+      ],
+      "url": "https://github.com/jeandupont/ecommerce",
+      "highlights": true
+    },
+    {
+      "id": "proj3",
+      "name": "Real-time Chat Application",
+      "description": "Application de chat en temps réel avec WebSocket",
+      "role": "Developer",
+      "technologies": ["Vue.js", "Socket.io", "Express", "Redis"],
+      "achievements": [
+        "Chat en temps réel avec rooms et messages privés",
+        "Support de 1000+ connexions simultanées",
+        "Système de notifications push",
+        "Interface moderne et intuitive"
+      ],
+      "url": "https://github.com/jeandupont/realtime-chat",
+      "highlights": false
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master Informatique",
+      "field": "Génie Logiciel",
+      "institution": "Université Paris-Saclay",
+      "location": "Paris, France",
+      "start_date": "2015-09",
+      "end_date": "2017-06",
+      "description": "Spécialisation en développement logiciel et architectures distribuées"
+    },
+    {
+      "degree": "Licence Informatique",
+      "field": "Informatique Générale",
+      "institution": "Université Lyon 1",
+      "location": "Lyon, France",
+      "start_date": "2012-09",
+      "end_date": "2015-06",
+      "description": "Formation générale en informatique et programmation"
+    }
+  ],
+  "languages": [
+    {"name": "Français", "level": "Natif"},
+    {"name": "Anglais", "level": "Courant (C1)"},
+    {"name": "Espagnol", "level": "Intermédiaire (B1)"}
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Developer - Associate",
+      "issuer": "Amazon Web Services",
+      "date": "2022-08",
+      "credential_id": "AWS-123456"
+    },
+    {
+      "name": "Professional Scrum Master I",
+      "issuer": "Scrum.org",
+      "date": "2021-03",
+      "credential_id": "PSM-789012"
+    }
+  ],
+  "interests": [
+    "Open Source",
+    "Intelligence Artificielle",
+    "Blockchain",
+    "Veille technologique",
+    "Hackathons",
+    "Blogging technique"
+  ]
+}
