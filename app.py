@@ -11,6 +11,7 @@ from src.analyzer import JobOfferAnalyzer
 from src.ai_adapter import CVPersonalizer
 from src.pdf_generator import PDFGenerator
 from src.color_matcher import ColorMatcher
+from src.ollama_client import OllamaClient
 
 # Charger les variables d'environnement
 load_dotenv()
@@ -78,16 +79,54 @@ def main():
         unsafe_allow_html=True
     )
 
-    # Vérifier la clé API
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        st.error("⚠️ ANTHROPIC_API_KEY non trouvée. Créez un fichier .env avec votre clé API.")
-        st.info("Copiez le fichier .env.example en .env et ajoutez votre clé API Anthropic.")
+    # Vérifier qu'Ollama est disponible
+    test_client = OllamaClient()
+    if not test_client.is_available():
+        st.error("❌ **Ollama n'est pas disponible !**")
+        st.warning("""
+        **Ollama n'est pas lancé ou n'est pas installé.**
+
+        **Pour installer Ollama :**
+        - **macOS/Linux** : `curl -fsSL https://ollama.com/install.sh | sh`
+        - **Windows** : Téléchargez depuis https://ollama.com/download
+
+        **Pour lancer Ollama :**
+        ```bash
+        ollama serve
+        ```
+
+        **Puis téléchargez le modèle recommandé dans un autre terminal :**
+        ```bash
+        ollama pull qwen2.5:7b
+        ```
+        """)
         st.stop()
 
     # Sidebar
     with st.sidebar:
         st.header("⚙️ Configuration")
+
+        # Statut Ollama
+        st.subheader("🤖 IA Locale (Ollama)")
+        ollama_client = OllamaClient()
+        available_models = ollama_client.list_available_models()
+
+        if available_models:
+            st.success(f"✅ Ollama actif - {len(available_models)} modèle(s) disponible(s)")
+
+            # Sélecteur de modèle
+            model_choice = st.selectbox(
+                "Modèle IA",
+                available_models,
+                index=0 if available_models else None,
+                help="Le modèle qwen2.5:7b est recommandé pour sa précision en JSON"
+            )
+        else:
+            st.warning("⚠️ Aucun modèle installé")
+            st.info("Téléchargez un modèle : `ollama pull qwen2.5:7b`")
+            model_choice = "qwen2.5:7b"  # Défaut
+
+        st.divider()
 
         # Charger le profil
         profile_path = st.text_input("Chemin du profil", "data/profile.json")
@@ -143,9 +182,9 @@ def main():
         analyze_button = st.button("🔍 Analyser l'offre", type="primary", use_container_width=True)
 
     if analyze_button and job_text:
-        with st.spinner("🤖 Analyse de l'offre en cours..."):
+        with st.spinner("🤖 Analyse de l'offre en cours avec Ollama..."):
             try:
-                analyzer = JobOfferAnalyzer()
+                analyzer = JobOfferAnalyzer(model=model_choice)
                 st.session_state.job_offer = analyzer.analyze_job_offer(job_text)
                 st.success("✅ Offre analysée avec succès !")
             except Exception as e:
@@ -182,9 +221,9 @@ def main():
         st.header("2️⃣ Personnalisation du CV")
 
         if st.button("✨ Personnaliser avec l'IA", type="primary"):
-            with st.spinner("🤖 Personnalisation en cours..."):
+            with st.spinner("🤖 Personnalisation en cours avec Ollama..."):
                 try:
-                    personalizer = CVPersonalizer()
+                    personalizer = CVPersonalizer(model=model_choice)
                     st.session_state.customized_cv = personalizer.personalize_cv(
                         st.session_state.profile,
                         st.session_state.job_offer

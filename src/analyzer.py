@@ -1,26 +1,28 @@
 """
-Analyseur d'offres d'emploi avec IA
+Analyseur d'offres d'emploi avec IA (Ollama - local et gratuit)
 """
 import os
-import json
 from typing import Dict, Any
-from anthropic import Anthropic
 from dotenv import load_dotenv
 from .models import JobOffer
+from .ollama_client import OllamaClient
 
 load_dotenv()
 
 
 class JobOfferAnalyzer:
-    """Analyse les offres d'emploi avec l'IA"""
+    """Analyse les offres d'emploi avec l'IA locale (Ollama)"""
 
-    def __init__(self, api_key: str = None):
-        self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
-        if not self.api_key:
-            raise ValueError("ANTHROPIC_API_KEY non trouvée. Ajoutez-la dans le fichier .env")
+    def __init__(self, model: str = None):
+        """
+        Initialise l'analyseur avec Ollama
 
-        self.client = Anthropic(api_key=self.api_key)
-        self.model = os.getenv("AI_MODEL", "claude-3-5-sonnet-20241022")
+        Args:
+            model: Nom du modèle Ollama (défaut: qwen2.5:7b)
+        """
+        # Récupérer le modèle depuis .env ou utiliser le défaut
+        self.model = model or os.getenv("OLLAMA_MODEL", "qwen2.5:7b")
+        self.client = OllamaClient(model=self.model)
 
     def analyze_job_offer(self, job_text: str) -> JobOffer:
         """
@@ -33,53 +35,49 @@ class JobOfferAnalyzer:
             JobOffer: Offre analysée avec compétences, technologies, etc.
         """
 
-        prompt = f"""Analyse cette offre d'emploi et extrais les informations suivantes au format JSON :
+        # Prompt optimisé pour les modèles locaux (plus direct et structuré)
+        system = """Tu es un expert en analyse d'offres d'emploi. Ta mission est d'extraire des informations structurées.
+Réponds UNIQUEMENT avec du JSON valide, sans texte avant ou après."""
 
-- company: Nom de l'entreprise
-- position: Titre du poste
-- description: Description courte du poste (2-3 phrases max)
-- required_skills: Liste des compétences requises (hard skills)
-- preferred_skills: Liste des compétences préférées/bonus
-- technologies: Liste des technologies, langages, frameworks mentionnés
-- keywords: Mots-clés importants pour le poste (soft skills, domaines, etc.)
-
-Offre d'emploi :
+        prompt = f"""OFFRE D'EMPLOI :
 {job_text}
 
-Réponds UNIQUEMENT avec un objet JSON valide, sans texte avant ou après.
-Format attendu :
+TÂCHE : Extrais les informations suivantes au format JSON strict :
+
 {{
-  "company": "Nom Entreprise",
-  "position": "Titre du poste",
-  "description": "Description courte",
-  "required_skills": ["skill1", "skill2"],
-  "preferred_skills": ["skill3", "skill4"],
-  "technologies": ["tech1", "tech2"],
-  "keywords": ["keyword1", "keyword2"]
-}}"""
+  "company": "nom de l'entreprise (si mentionné, sinon 'Non spécifié')",
+  "position": "titre exact du poste",
+  "description": "description courte du poste en 2-3 phrases maximum",
+  "required_skills": ["compétence obligatoire 1", "compétence obligatoire 2", ...],
+  "preferred_skills": ["compétence souhaitée 1", "compétence souhaitée 2", ...],
+  "technologies": ["technologie/outil 1", "technologie/outil 2", ...],
+  "keywords": ["mot-clé important 1", "mot-clé important 2", ...]
+}}
+
+RÈGLES IMPORTANTES :
+- required_skills : Compétences techniques obligatoires (5-8 maximum)
+- preferred_skills : Compétences souhaitées ou bonus (3-5 maximum)
+- technologies : Technologies, langages, frameworks, outils spécifiques
+- keywords : Mots-clés importants (soft skills, domaines, certifications)
+- Si une information n'est pas dans l'offre, mets une liste vide []
+- Réponds UNIQUEMENT avec le JSON, rien d'autre"""
 
         try:
-            message = self.client.messages.create(
-                model=self.model,
-                max_tokens=2000,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ]
+            # Générer et parser le JSON automatiquement
+            job_data = self.client.generate_json(
+                prompt=prompt,
+                system=system,
+                temperature=0.1,  # Bas pour plus de cohérence
+                max_tokens=2000
             )
-
-            # Extraire le texte de la réponse
-            response_text = message.content[0].text
-
-            # Parser le JSON
-            job_data = json.loads(response_text)
 
             # Créer l'objet JobOffer
             return JobOffer(**job_data)
 
-        except json.JSONDecodeError as e:
-            raise ValueError(f"Erreur de parsing JSON : {e}\nRéponse : {response_text}")
+        except ValueError as e:
+            raise ValueError(f"❌ Erreur de parsing JSON : {e}")
         except Exception as e:
-            raise Exception(f"Erreur lors de l'analyse de l'offre : {e}")
+            raise Exception(f"❌ Erreur lors de l'analyse de l'offre : {e}")
 
     def extract_url_content(self, url: str) -> str:
         """

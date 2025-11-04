@@ -4,8 +4,9 @@ fastapi==0.109.0
 uvicorn==0.27.0
 
 # IA Integration
-anthropic==0.39.0
-openai==1.12.0  # Fallback option
+# Note: Ce projet utilise Ollama (IA locale gratuite)
+# Installation: https://ollama.com/download
+# Commande: ollama pull qwen2.5:7b
 
 # PDF Generation
 weasyprint==60.2

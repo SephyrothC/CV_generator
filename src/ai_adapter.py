@@ -1,26 +1,28 @@
 """
-Adaptateur IA pour la personnalisation du CV
+Adaptateur IA pour la personnalisation du CV (Ollama - local et gratuit)
 """
 import os
-import json
 from typing import List, Dict, Any
-from anthropic import Anthropic
 from dotenv import load_dotenv
 from .models import Profile, JobOffer, CustomizedCV
+from .ollama_client import OllamaClient
 
 load_dotenv()
 
 
 class CVPersonalizer:
-    """Personnalise le CV en fonction de l'offre d'emploi avec l'IA"""
+    """Personnalise le CV en fonction de l'offre d'emploi avec l'IA locale (Ollama)"""
 
-    def __init__(self, api_key: str = None):
-        self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
-        if not self.api_key:
-            raise ValueError("ANTHROPIC_API_KEY non trouvée. Ajoutez-la dans le fichier .env")
+    def __init__(self, model: str = None):
+        """
+        Initialise le personnalisateur avec Ollama
 
-        self.client = Anthropic(api_key=self.api_key)
-        self.model = os.getenv("AI_MODEL", "claude-3-5-sonnet-20241022")
+        Args:
+            model: Nom du modèle Ollama (défaut: qwen2.5:7b)
+        """
+        # Récupérer le modèle depuis .env ou utiliser le défaut
+        self.model = model or os.getenv("OLLAMA_MODEL", "qwen2.5:7b")
+        self.client = OllamaClient(model=self.model)
 
     def personalize_cv(self, profile: Profile, job_offer: JobOffer) -> CustomizedCV:
         """
@@ -37,61 +39,76 @@ class CVPersonalizer:
         # Préparer les données du profil pour l'IA
         profile_summary = self._prepare_profile_summary(profile)
 
-        prompt = f"""Tu es un expert en recrutement et en optimisation de CV.
+        # Prompt optimisé pour les modèles locaux (plus direct et structuré)
+        system = """Tu es un expert en optimisation de CV et recrutement.
+Tu dois analyser un profil candidat et une offre d'emploi, puis personnaliser le CV pour maximiser les chances.
+Réponds UNIQUEMENT avec du JSON valide, sans texte avant ou après."""
 
-Voici le profil complet d'un candidat :
+        prompt = f"""PROFIL DU CANDIDAT :
 {profile_summary}
 
-Voici l'offre d'emploi ciblée :
-- Entreprise: {job_offer.company}
-- Poste: {job_offer.position}
-- Description: {job_offer.description}
-- Compétences requises: {', '.join(job_offer.required_skills)}
-- Compétences préférées: {', '.join(job_offer.preferred_skills)}
-- Technologies: {', '.join(job_offer.technologies)}
-- Mots-clés: {', '.join(job_offer.keywords)}
+OFFRE D'EMPLOI CIBLÉE :
+- Entreprise : {job_offer.company}
+- Poste : {job_offer.position}
+- Description : {job_offer.description}
+- Compétences requises : {', '.join(job_offer.required_skills)}
+- Compétences préférées : {', '.join(job_offer.preferred_skills)}
+- Technologies : {', '.join(job_offer.technologies)}
+- Mots-clés : {', '.join(job_offer.keywords)}
 
-Ta mission : personnaliser le CV pour maximiser les chances d'obtenir un entretien.
+TÂCHE : Génère une personnalisation complète au format JSON strict :
 
-Génère un objet JSON avec :
-1. selected_experiences: Liste des IDs des 2-3 expériences les plus pertinentes (max 3)
-2. selected_projects: Liste des IDs des 2-3 projets les plus pertinents (max 3)
-3. selected_skills: Liste de 6-10 compétences les plus pertinentes du candidat
-4. strengths: Liste de 3-4 points forts/atouts adaptés au poste (phrases courtes et percutantes)
-5. custom_summary: Un résumé personnalisé de 2-3 phrases qui met en avant ce qui correspond au poste
-6. colors: Objet avec "primary" et "secondary" (couleurs hex de la marque si connue, sinon couleurs professionnelles neutres)
-
-IMPORTANT:
-- Sélectionne UNIQUEMENT les expériences, projets et compétences qui existent dans le profil
-- Les IDs doivent correspondre exactement aux IDs du profil
-- Priorise la pertinence par rapport à l'offre
-- Les points forts doivent être concrets et liés au poste
-- Le résumé doit être personnalisé pour ce poste spécifique
-
-Réponds UNIQUEMENT avec un objet JSON valide :
 {{
-  "selected_experiences": ["exp1", "exp2"],
-  "selected_projects": ["proj1", "proj2"],
-  "selected_skills": ["skill1", "skill2", "skill3", ...],
-  "strengths": ["Point fort 1", "Point fort 2", "Point fort 3"],
-  "custom_summary": "Résumé personnalisé...",
+  "selected_experiences": ["id_exp1", "id_exp2"],
+  "selected_projects": ["id_proj1", "id_proj2"],
+  "selected_skills": ["compétence1", "compétence2", "compétence3", ...],
+  "strengths": [
+    "Point fort 1 aligné avec le poste",
+    "Point fort 2 démontrant la pertinence",
+    "Point fort 3 mettant en valeur l'expérience",
+    "Point fort 4 soulignant une qualité unique"
+  ],
+  "custom_summary": "Résumé professionnel personnalisé de 2-3 phrases qui met en avant les points les plus pertinents pour ce poste spécifique.",
   "colors": {{"primary": "#1a73e8", "secondary": "#34a853"}}
-}}"""
+}}
+
+RÈGLES IMPORTANTES :
+1. selected_experiences : Choisis les 2-3 IDs d'expériences LES PLUS pertinentes (max 3)
+   - Utilise EXACTEMENT les IDs du profil (exp1, exp2, exp3, etc.)
+   - Priorise celles qui correspondent aux technologies/compétences requises
+
+2. selected_projects : Choisis les 2-3 IDs de projets LES PLUS alignés (max 3)
+   - Utilise EXACTEMENT les IDs du profil (proj1, proj2, proj3, etc.)
+   - Priorise ceux qui démontrent les compétences recherchées
+
+3. selected_skills : Liste 6-10 compétences prioritaires pour ce poste
+   - Utilise EXACTEMENT les noms de compétences du profil
+   - Priorise celles mentionnées dans l'offre
+
+4. strengths : 3-4 points forts concrets et mesurables
+   - Phrases courtes et percutantes
+   - Liés directement au poste visé
+   - Mettent en avant la valeur ajoutée
+
+5. custom_summary : Résumé professionnel personnalisé
+   - 2-3 phrases maximum
+   - Met en avant les points forts pour CE poste
+   - Mentionne l'expérience et les compétences clés
+
+6. colors : Couleurs professionnelles en hexadécimal
+   - primary : couleur principale (si entreprise connue, utilise sa couleur de marque)
+   - secondary : couleur secondaire complémentaire
+
+IMPORTANT : Réponds UNIQUEMENT avec le JSON, rien d'autre."""
 
         try:
-            message = self.client.messages.create(
-                model=self.model,
-                max_tokens=2500,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ]
+            # Générer et parser le JSON automatiquement
+            customization_data = self.client.generate_json(
+                prompt=prompt,
+                system=system,
+                temperature=0.2,  # Un peu plus créatif pour le résumé
+                max_tokens=2500
             )
-
-            # Extraire le texte de la réponse
-            response_text = message.content[0].text
-
-            # Parser le JSON
-            customization_data = json.loads(response_text)
 
             # Créer l'objet CustomizedCV
             return CustomizedCV(
@@ -100,35 +117,43 @@ Réponds UNIQUEMENT avec un objet JSON valide :
                 **customization_data
             )
 
-        except json.JSONDecodeError as e:
-            raise ValueError(f"Erreur de parsing JSON : {e}\nRéponse : {response_text}")
+        except ValueError as e:
+            raise ValueError(f"❌ Erreur de parsing JSON : {e}")
         except Exception as e:
-            raise Exception(f"Erreur lors de la personnalisation : {e}")
+            raise Exception(f"❌ Erreur lors de la personnalisation : {e}")
 
     def _prepare_profile_summary(self, profile: Profile) -> str:
-        """Prépare un résumé du profil pour l'IA"""
+        """Prépare un résumé concis du profil pour l'IA"""
 
-        # Expériences
-        experiences_text = "\n\nEXPÉRIENCES:\n"
+        # Expériences (format compact)
+        experiences_text = "\nEXPÉRIENCES PROFESSIONNELLES :\n"
         for exp in profile.experiences:
-            experiences_text += f"- ID: {exp.id}\n"
-            experiences_text += f"  Poste: {exp.position} chez {exp.company}\n"
-            experiences_text += f"  Technologies: {', '.join(exp.technologies)}\n"
-            experiences_text += f"  Réalisations: {'; '.join(exp.achievements[:3])}\n"
+            experiences_text += f"\n[ID: {exp.id}]\n"
+            experiences_text += f"• Poste : {exp.position} @ {exp.company}\n"
+            experiences_text += f"• Période : {exp.start_date} - {'Présent' if exp.current else exp.end_date}\n"
+            experiences_text += f"• Technologies : {', '.join(exp.technologies)}\n"
+            # Limiter à 3 réalisations principales
+            experiences_text += f"• Réalisations principales :\n"
+            for achievement in exp.achievements[:3]:
+                experiences_text += f"  - {achievement}\n"
 
-        # Compétences
-        skills_text = "\n\nCOMPÉTENCES:\n"
+        # Compétences (format compact par catégorie)
+        skills_text = "\nCOMPÉTENCES PAR CATÉGORIE :\n"
         for category, skills in profile.skills.items():
-            skills_text += f"{category.upper()}: "
-            skills_text += ", ".join([f"{s.name} ({s.level})" for s in skills]) + "\n"
+            skill_names = [f"{s.name} ({s.level}, {s.years} ans)" for s in skills]
+            skills_text += f"• {category.upper()} : {', '.join(skill_names)}\n"
 
-        # Projets
-        projects_text = "\n\nPROJETS:\n"
+        # Projets (format compact)
+        projects_text = "\nPROJETS NOTABLES :\n"
         for proj in profile.projects:
-            projects_text += f"- ID: {proj.id}\n"
-            projects_text += f"  Nom: {proj.name}\n"
-            projects_text += f"  Technologies: {', '.join(proj.technologies)}\n"
-            projects_text += f"  Description: {proj.description}\n"
+            projects_text += f"\n[ID: {proj.id}]\n"
+            projects_text += f"• Nom : {proj.name}\n"
+            projects_text += f"• Rôle : {proj.role}\n"
+            projects_text += f"• Description : {proj.description}\n"
+            projects_text += f"• Technologies : {', '.join(proj.technologies)}\n"
+            # Limiter à 2 réalisations
+            if proj.achievements:
+                projects_text += f"• Réalisations : {'; '.join(proj.achievements[:2])}\n"
 
         return experiences_text + skills_text + projects_text
 
@@ -142,5 +167,5 @@ Réponds UNIQUEMENT avec un objet JSON valide :
         Reformule les descriptions d'expériences pour mieux correspondre au poste
         (Fonctionnalité bonus - peut être ajoutée plus tard)
         """
-        # TODO: Implémenter la reformulation des expériences
+        # TODO: Implémenter la reformulation des expériences avec Ollama
         pass
