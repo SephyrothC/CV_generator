@@ -1,209 +1,311 @@
 {
   "personal_info": {
-    "first_name": "Jean",
-    "last_name": "Dupont",
-    "title": "Développeur Full Stack",
-    "email": "jean.dupont@email.com",
-    "phone": "+33 6 12 34 56 78",
-    "location": "Paris, France",
-    "linkedin": "linkedin.com/in/jeandupont",
-    "github": "github.com/jeandupont",
-    "portfolio": "jeandupont.dev",
-    "summary": "Développeur passionné avec 5 ans d'expérience dans le développement web moderne. Expert en JavaScript/TypeScript et Python, avec une forte orientation résultats et une capacité à travailler en équipe agile."
+    "first_name": "Adrian",
+    "last_name": "Stéphan",
+    "title": "Ingénieur Cybersécurité & Développeur Full Stack",
+    "email": "stephan@et.esiea.fr",
+    "phone": "+33 6 XX XX XX XX",
+    "location": "Laval, France",
+    "linkedin": "linkedin.com/in/adrian-stéphan-029980258",
+    "github": "github.com/SephyrothC",
+    "portfolio": "sephyrothc.dev",
+    "summary": "Étudiant ingénieur passionné par la cybersécurité et le développement logiciel, avec une expertise en analyse de vulnérabilités et développement d'applications sécurisées. Spécialisé dans la création d'outils open-source et la sensibilisation aux failles de sécurité web. Fort d'une approche pratique par projet à l'ESIEA (Top 3 des écoles d'ingénieurs en informatique), je combine solides compétences techniques et vision stratégique de la sécurité applicative."
   },
   "experiences": [
     {
       "id": "exp1",
-      "company": "TechCorp",
-      "position": "Développeur Full Stack Senior",
-      "location": "Paris, France",
-      "start_date": "2021-03",
+      "company": "AXIS ÉLECTRONIQUE",
+      "position": "Développeur & Ingénieur Systèmes Embarqués",
+      "location": "Laval, France",
+      "start_date": "2023-09",
       "end_date": null,
       "current": true,
-      "description": "Développement et maintenance d'applications web à grande échelle",
+      "description": "Conception et développement de systèmes embarqués et applications métier",
       "achievements": [
-        "Développement d'une plateforme SaaS servant plus de 10,000 utilisateurs actifs",
-        "Réduction du temps de chargement de 40% grâce à l'optimisation du backend",
-        "Migration complète de l'architecture monolithique vers microservices",
-        "Mise en place de CI/CD avec GitHub Actions et Docker",
-        "Mentorat de 3 développeurs juniors"
+        "Développement d'applications embarquées en C/C++ pour des systèmes temps réel",
+        "Conception d'interfaces de contrôle et monitoring en Python",
+        "Optimisation des performances système et réduction de la consommation énergétique de 25%",
+        "Participation à l'intégration continue et tests automatisés",
+        "Collaboration étroite avec les équipes hardware et firmware"
       ],
-      "technologies": ["React", "Node.js", "TypeScript", "PostgreSQL", "Docker", "AWS", "Redis", "GraphQL"]
+      "technologies": ["C", "C++", "Python", "Systèmes Embarqués", "Linux", "Git", "Testing"]
     },
     {
       "id": "exp2",
-      "company": "StartupXYZ",
-      "position": "Développeur Frontend",
-      "location": "Lyon, France",
-      "start_date": "2019-06",
-      "end_date": "2021-02",
+      "company": "ESIEA - Laboratoire Cybersécurité",
+      "position": "Développeur de Plateforme d'Apprentissage - Exploit2Learn",
+      "location": "Laval, France",
+      "start_date": "2024-01",
+      "end_date": "2024-06",
       "current": false,
-      "description": "Développement d'interfaces utilisateur modernes et responsive",
+      "description": "Projet académique : Création d'une plateforme web d'entraînement aux failles de sécurité",
       "achievements": [
-        "Création de l'interface utilisateur complète d'une application e-commerce",
-        "Implémentation d'un design system réutilisable avec Storybook",
-        "Amélioration du score Lighthouse de 65 à 95",
-        "Intégration de tests E2E avec Cypress"
+        "Conception et développement d'une plateforme interactive d'apprentissage des vulnérabilités web",
+        "Implémentation de 15+ scénarios d'exploitation (SQL injection, XSS, CSRF, etc.)",
+        "Création d'un système de progression et tracking des compétences",
+        "Architecture sécurisée avec isolation des environnements d'entraînement",
+        "Présenté au salon OpenESIEA devant 200+ visiteurs et professionnels"
       ],
-      "technologies": ["Vue.js", "JavaScript", "SASS", "Webpack", "Jest", "Cypress"]
+      "technologies": ["TypeScript", "React", "Node.js", "Docker", "PostgreSQL", "Security Testing", "OWASP"]
     },
     {
       "id": "exp3",
-      "company": "Digital Agency",
-      "position": "Développeur Web Junior",
-      "location": "Paris, France",
-      "start_date": "2018-01",
-      "end_date": "2019-05",
-      "current": false,
-      "description": "Développement de sites web et applications pour divers clients",
+      "company": "Projets Open Source",
+      "position": "Développeur & Mainteneur de Projets OSS",
+      "location": "Remote",
+      "start_date": "2023-01",
+      "end_date": null,
+      "current": true,
+      "description": "Développement et maintenance de plusieurs projets open-source sur GitHub",
       "achievements": [
-        "Développement de 15+ sites web pour des clients variés",
-        "Création de thèmes WordPress personnalisés",
-        "Intégration d'APIs tierces (Stripe, Mailchimp, Google Maps)",
-        "Support technique et maintenance client"
+        "Développement d'un gestionnaire de mots de passe sécurisé en Python (Password_Manager)",
+        "Création d'un analyseur de vulnérabilités automatisé (Analyseur-de-vuln) - TypeScript",
+        "Contribution active à la communauté open-source avec 4+ projets publics",
+        "Documentation complète et bonnes pratiques de versioning Git",
+        "Engagement dans la sécurité applicative et le partage de connaissances"
       ],
-      "technologies": ["PHP", "WordPress", "jQuery", "MySQL", "HTML5", "CSS3", "Bootstrap"]
+      "technologies": ["Python", "TypeScript", "JavaScript", "HTML/CSS", "Git", "GitHub", "Security"]
     }
   ],
   "skills": {
+    "cybersecurity": [
+      {"name": "Pentest Web (OWASP Top 10)", "level": "advanced", "years": 2},
+      {"name": "Analyse de Vulnérabilités", "level": "advanced", "years": 2},
+      {"name": "Cryptographie", "level": "intermediate", "years": 2},
+      {"name": "Sécurité Applicative", "level": "advanced", "years": 2},
+      {"name": "Ethical Hacking", "level": "intermediate", "years": 2},
+      {"name": "Burp Suite / OWASP ZAP", "level": "intermediate", "years": 1},
+      {"name": "Sécurité des API", "level": "intermediate", "years": 1}
+    ],
+    "languages": [
+      {"name": "Python", "level": "expert", "years": 3},
+      {"name": "C", "level": "advanced", "years": 3},
+      {"name": "C++", "level": "advanced", "years": 2},
+      {"name": "TypeScript", "level": "advanced", "years": 2},
+      {"name": "JavaScript", "level": "advanced", "years": 3},
+      {"name": "Java", "level": "intermediate", "years": 2},
+      {"name": "HTML5/CSS3", "level": "advanced", "years": 3},
+      {"name": "SQL", "level": "advanced", "years": 2},
+      {"name": "Bash/Shell", "level": "intermediate", "years": 2}
+    ],
     "frontend": [
-      {"name": "React", "level": "expert", "years": 4},
-      {"name": "Vue.js", "level": "advanced", "years": 3},
-      {"name": "TypeScript", "level": "expert", "years": 3},
-      {"name": "JavaScript", "level": "expert", "years": 5},
-      {"name": "HTML5/CSS3", "level": "expert", "years": 5},
-      {"name": "Tailwind CSS", "level": "advanced", "years": 2},
-      {"name": "Next.js", "level": "advanced", "years": 2},
-      {"name": "Redux", "level": "advanced", "years": 3}
+      {"name": "React", "level": "advanced", "years": 2},
+      {"name": "Vue.js", "level": "intermediate", "years": 1},
+      {"name": "TypeScript", "level": "advanced", "years": 2},
+      {"name": "Tailwind CSS", "level": "intermediate", "years": 1},
+      {"name": "Responsive Design", "level": "advanced", "years": 2}
     ],
     "backend": [
-      {"name": "Node.js", "level": "expert", "years": 4},
-      {"name": "Python", "level": "advanced", "years": 3},
-      {"name": "Express.js", "level": "expert", "years": 4},
-      {"name": "FastAPI", "level": "advanced", "years": 2},
-      {"name": "GraphQL", "level": "advanced", "years": 2},
-      {"name": "REST API", "level": "expert", "years": 5}
+      {"name": "Node.js", "level": "advanced", "years": 2},
+      {"name": "Express.js", "level": "advanced", "years": 2},
+      {"name": "FastAPI", "level": "intermediate", "years": 1},
+      {"name": "REST API", "level": "advanced", "years": 2},
+      {"name": "GraphQL", "level": "intermediate", "years": 1}
     ],
     "database": [
-      {"name": "PostgreSQL", "level": "advanced", "years": 4},
-      {"name": "MongoDB", "level": "advanced", "years": 3},
-      {"name": "Redis", "level": "intermediate", "years": 2},
-      {"name": "MySQL", "level": "advanced", "years": 4}
+      {"name": "PostgreSQL", "level": "advanced", "years": 2},
+      {"name": "MySQL", "level": "advanced", "years": 2},
+      {"name": "MongoDB", "level": "intermediate", "years": 1},
+      {"name": "Redis", "level": "intermediate", "years": 1}
     ],
     "devops": [
-      {"name": "Docker", "level": "advanced", "years": 3},
-      {"name": "AWS", "level": "intermediate", "years": 2},
-      {"name": "CI/CD", "level": "advanced", "years": 3},
-      {"name": "GitHub Actions", "level": "advanced", "years": 2},
-      {"name": "Kubernetes", "level": "beginner", "years": 1},
-      {"name": "Nginx", "level": "intermediate", "years": 2}
+      {"name": "Docker", "level": "advanced", "years": 2},
+      {"name": "Linux/Unix", "level": "advanced", "years": 3},
+      {"name": "Git/GitHub", "level": "expert", "years": 3},
+      {"name": "CI/CD", "level": "intermediate", "years": 1},
+      {"name": "GitHub Actions", "level": "intermediate", "years": 1},
+      {"name": "Nginx", "level": "intermediate", "years": 1}
     ],
-    "tools": [
-      {"name": "Git", "level": "expert", "years": 5},
-      {"name": "VS Code", "level": "expert", "years": 5},
-      {"name": "Jira", "level": "advanced", "years": 4},
-      {"name": "Figma", "level": "intermediate", "years": 2},
-      {"name": "Postman", "level": "advanced", "years": 4}
+    "embedded": [
+      {"name": "Systèmes Embarqués", "level": "advanced", "years": 2},
+      {"name": "Programmation Temps Réel", "level": "intermediate", "years": 1},
+      {"name": "IoT", "level": "intermediate", "years": 1},
+      {"name": "Microcontrôleurs", "level": "intermediate", "years": 1}
     ],
     "methodologies": [
-      {"name": "Agile/Scrum", "level": "advanced", "years": 4},
-      {"name": "TDD", "level": "intermediate", "years": 2},
-      {"name": "Microservices", "level": "advanced", "years": 2},
-      {"name": "Clean Code", "level": "advanced", "years": 3}
+      {"name": "Agile/Scrum", "level": "advanced", "years": 2},
+      {"name": "DevSecOps", "level": "intermediate", "years": 1},
+      {"name": "Clean Code", "level": "advanced", "years": 2},
+      {"name": "Test-Driven Development", "level": "intermediate", "years": 1},
+      {"name": "Architecture Logicielle", "level": "intermediate", "years": 2}
     ]
   },
   "projects": [
     {
       "id": "proj1",
-      "name": "AI Task Manager",
-      "description": "Application de gestion de tâches avec suggestions IA",
-      "role": "Lead Developer",
-      "technologies": ["React", "Python", "FastAPI", "OpenAI API", "PostgreSQL"],
+      "name": "Exploit2Learn - Plateforme de Formation Cybersécurité",
+      "description": "Plateforme web interactive pour l'apprentissage des vulnérabilités web courantes",
+      "role": "Lead Developer & Security Engineer",
+      "technologies": ["TypeScript", "React", "Node.js", "Docker", "PostgreSQL", "OWASP"],
       "achievements": [
-        "Développement complet d'une app de gestion de tâches intelligente",
-        "Intégration de l'API OpenAI pour suggestions automatiques",
-        "Plus de 1000 utilisateurs en 3 mois",
-        "Architecture scalable avec FastAPI et React"
+        "Développement complet d'une plateforme d'entraînement aux failles web (OWASP Top 10)",
+        "15+ scénarios d'exploitation pratiques (SQLi, XSS, CSRF, RCE, etc.)",
+        "Architecture sécurisée avec isolation des environnements (Docker)",
+        "Système de progression et validation des compétences",
+        "Présenté à OpenESIEA 2024 devant 200+ visiteurs professionnels"
       ],
-      "url": "https://github.com/jeandupont/ai-task-manager",
+      "url": "https://github.com/SephyrothC/Exploit2Learn",
       "highlights": true
     },
     {
       "id": "proj2",
-      "name": "E-commerce Platform",
-      "description": "Plateforme e-commerce complète avec paiement intégré",
-      "role": "Full Stack Developer",
-      "technologies": ["Next.js", "Node.js", "Stripe", "MongoDB", "Tailwind CSS"],
+      "name": "Analyseur-de-vuln - Scanner de Vulnérabilités Automatisé",
+      "description": "Outil d'analyse automatique de vulnérabilités pour applications web",
+      "role": "Creator & Developer",
+      "technologies": ["TypeScript", "Node.js", "OWASP", "Security Testing"],
       "achievements": [
-        "Développement d'une boutique en ligne complète",
-        "Intégration de Stripe pour les paiements",
-        "Tableau de bord admin avec analytics",
-        "Responsive et optimisé SEO"
+        "Détection automatique de vulnérabilités web (XSS, SQLi, IDOR, etc.)",
+        "Interface CLI intuitive pour intégration CI/CD",
+        "Rapports détaillés avec recommandations de correction",
+        "Open-source avec 1+ star sur GitHub",
+        "Extensible via système de plugins"
       ],
-      "url": "https://github.com/jeandupont/ecommerce",
+      "url": "https://github.com/SephyrothC/Analyseur-de-vuln",
       "highlights": true
     },
     {
       "id": "proj3",
-      "name": "Real-time Chat Application",
-      "description": "Application de chat en temps réel avec WebSocket",
-      "role": "Developer",
-      "technologies": ["Vue.js", "Socket.io", "Express", "Redis"],
+      "name": "Password_Manager - Gestionnaire de Mots de Passe Sécurisé",
+      "description": "Gestionnaire de mots de passe open-source avec chiffrement fort",
+      "role": "Lead Developer",
+      "technologies": ["Python", "Cryptography", "SQLite", "Tkinter"],
       "achievements": [
-        "Chat en temps réel avec rooms et messages privés",
-        "Support de 1000+ connexions simultanées",
-        "Système de notifications push",
-        "Interface moderne et intuitive"
+        "Chiffrement AES-256 pour stockage sécurisé des credentials",
+        "Génération de mots de passe robustes (configurable)",
+        "Interface graphique intuitive (Tkinter)",
+        "Authentification maître avec dérivation PBKDF2",
+        "100% open-source et auditable"
       ],
-      "url": "https://github.com/jeandupont/realtime-chat",
+      "url": "https://github.com/SephyrothC/Password_Manager",
+      "highlights": true
+    },
+    {
+      "id": "proj4",
+      "name": "Nutrimate - Application de Suivi Nutritionnel",
+      "description": "Application web pour le suivi et l'analyse nutritionnelle personnalisée",
+      "role": "Full Stack Developer",
+      "technologies": ["JavaScript", "Node.js", "Express", "MongoDB", "Chart.js"],
+      "achievements": [
+        "Suivi des apports nutritionnels avec base de données alimentaire",
+        "Calculs automatiques des macros (protéines, glucides, lipides)",
+        "Visualisations interactives des statistiques (Chart.js)",
+        "Recommandations personnalisées selon les objectifs",
+        "Architecture RESTful scalable"
+      ],
+      "url": "https://github.com/SephyrothC/Nutrimate",
+      "highlights": false
+    },
+    {
+      "id": "proj5",
+      "name": "Thalric-Dashboard - Tableau de Bord de Monitoring",
+      "description": "Dashboard temps réel pour monitoring d'infrastructures et services",
+      "role": "Frontend Developer",
+      "technologies": ["HTML5", "CSS3", "JavaScript", "WebSocket", "Chart.js"],
+      "achievements": [
+        "Dashboard responsive avec mise à jour temps réel (WebSocket)",
+        "Monitoring multi-services (CPU, mémoire, réseau, services)",
+        "Alertes configurables avec notifications",
+        "Interface moderne et intuitive",
+        "Compatible mobile et desktop"
+      ],
+      "url": "https://github.com/SephyrothC/thalric-dashboard",
       "highlights": false
     }
   ],
   "education": [
     {
-      "degree": "Master Informatique",
-      "field": "Génie Logiciel",
-      "institution": "Université Paris-Saclay",
-      "location": "Paris, France",
-      "start_date": "2015-09",
-      "end_date": "2017-06",
-      "description": "Spécialisation en développement logiciel et architectures distribuées"
+      "degree": "Diplôme d'Ingénieur en Informatique (Cycle Ingénieur)",
+      "field": "Sciences et Technologies du Numérique",
+      "institution": "ESIEA - École d'Ingénieurs du Numérique",
+      "location": "Laval, France",
+      "start_date": "2022-09",
+      "end_date": "2025-06",
+      "current": true,
+      "description": "Formation d'ingénieur généraliste en informatique avec spécialisation en Cybersécurité et Systèmes d'Information. École classée 3ème en France (Usine Nouvelle 2025). Formation accréditée CTI avec forte orientation projets.",
+      "specialization": "Cybersécurité & Systèmes d'Information",
+      "highlights": [
+        "Top 3 des écoles d'ingénieurs en informatique (France)",
+        "Formation accréditée CTI (Commission des Titres d'Ingénieur)",
+        "Pédagogie par projets (40% du cursus)",
+        "Laboratoire de Cybersécurité CNS (Confiance Numérique et Sécurité)",
+        "Taux d'insertion : 96% en 2 mois"
+      ]
     },
     {
-      "degree": "Licence Informatique",
-      "field": "Informatique Générale",
-      "institution": "Université Lyon 1",
-      "location": "Lyon, France",
-      "start_date": "2012-09",
-      "end_date": "2015-06",
-      "description": "Formation générale en informatique et programmation"
+      "degree": "Classe Préparatoire Intégrée (CPI)",
+      "field": "Mathématiques et Sciences de l'Ingénieur",
+      "institution": "ESIEA - École d'Ingénieurs du Numérique",
+      "location": "Laval, France",
+      "start_date": "2020-09",
+      "end_date": "2022-06",
+      "description": "Prépa intégrée avec formation scientifique pluridisciplinaire (mathématiques, physique, informatique, électronique)"
     }
   ],
   "languages": [
     {"name": "Français", "level": "Natif"},
-    {"name": "Anglais", "level": "Courant (C1)"},
-    {"name": "Espagnol", "level": "Intermédiaire (B1)"}
+    {"name": "Anglais", "level": "Courant (B2-C1)", "certification": "TOEIC préparé"},
+    {"name": "Allemand", "level": "Scolaire (A2)"},
+    {"name": "Coréen", "level": "Débutant (A1)"}
   ],
   "certifications": [
     {
-      "name": "AWS Certified Developer - Associate",
-      "issuer": "Amazon Web Services",
-      "date": "2022-08",
-      "credential_id": "AWS-123456"
+      "name": "TOEIC (en préparation)",
+      "issuer": "ETS Global",
+      "date": "2025-06",
+      "status": "in_progress",
+      "description": "Préparation intensive pour certification niveau B2-C1"
     },
     {
-      "name": "Professional Scrum Master I",
-      "issuer": "Scrum.org",
-      "date": "2021-03",
-      "credential_id": "PSM-789012"
+      "name": "Formation Cybersécurité OWASP",
+      "issuer": "ESIEA - Laboratoire CNS",
+      "date": "2024-03",
+      "description": "Formation approfondie sur l'OWASP Top 10 et techniques d'exploitation"
+    }
+  ],
+  "conferences_events": [
+    {
+      "name": "OpenESIEA 2024 - Salon des Projets Étudiants",
+      "role": "Exposant - Projet Exploit2Learn",
+      "date": "2024-05",
+      "description": "Présentation du projet Exploit2Learn devant professionnels et étudiants"
+    },
+    {
+      "name": "DefHack 2025 - Exercice de Cyberdéfense",
+      "role": "Participant",
+      "date": "2025-02",
+      "description": "Participation à l'exercice grandeur nature de cyberdéfense ESIEA Laval"
+    },
+    {
+      "name": "SecNumEco & West Data Festival",
+      "role": "Participant",
+      "date": "2024-10",
+      "description": "Événements sur la cybersécurité et la data organisés par l'ESIEA"
     }
   ],
   "interests": [
-    "Open Source",
-    "Intelligence Artificielle",
-    "Blockchain",
-    "Veille technologique",
-    "Hackathons",
-    "Blogging technique"
-  ]
+    "Cybersécurité & Ethical Hacking",
+    "Open Source & Contributions OSS",
+    "CTF & Bug Bounty",
+    "Intelligence Artificielle & Machine Learning",
+    "Systèmes Embarqués & IoT",
+    "Veille technologique (Security, DevOps)",
+    "Automatisation & Scripting",
+    "Hackathons & Challenges techniques"
+  ],
+  "soft_skills": [
+    "Résolution de problèmes complexes",
+    "Travail en équipe agile",
+    "Communication technique",
+    "Curiosité & Apprentissage continu",
+    "Autonomie & Initiative",
+    "Pensée analytique",
+    "Gestion de projets",
+    "Rigueur & Méthodologie"
+  ],
+  "availability": {
+    "status": "Recherche stage de fin d'études (6 mois)",
+    "start_date": "2025-09",
+    "preferences": ["Cybersécurité", "Développement Sécurisé", "Pentesting", "DevSecOps", "Full Stack"],
+    "location_preferences": ["France", "Remote", "Hybride"]
+  }
 }
