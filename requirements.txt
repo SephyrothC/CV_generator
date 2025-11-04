@@ -8,7 +8,7 @@ streamlit==1.31.0
 requests==2.31.0  # Pour communiquer avec l'API Ollama
 
 # PDF Generation
-weasyprint==60.2
+weasyprint>=60.2
 
 # Data Processing
 pydantic==2.6.0
