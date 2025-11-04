@@ -5,17 +5,20 @@
     <title>CV - {{ personal_info.first_name }} {{ personal_info.last_name }}</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        @page { size: A4; margin: 10mm 12mm; }
-        
+
+        @page { size: A4; margin: 0; }
+
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
             font-size: 8.5pt;
             line-height: 1.25;
             color: #2d3748;
+            width: 210mm;
+            height: 297mm;
+            overflow: hidden;
         }
-        
-        .container { padding: 0; }
+
+        .container { padding: 12mm 15mm; background: white; }
         
         .header {
             text-align: center;
