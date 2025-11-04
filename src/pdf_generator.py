@@ -8,6 +8,14 @@ from typing import Dict, Any
 from jinja2 import Environment, FileSystemLoader
 from weasyprint import HTML, CSS
 from .models import Profile, CustomizedCV
+from .condensation import (
+    condense_experiences,
+    condense_projects,
+    condense_summary,
+    condense_achievements,
+    condense_text,
+    CONDENSATION_RULES
+)
 
 
 class PDFGenerator:
@@ -111,14 +119,14 @@ class PDFGenerator:
 
     def _prepare_template_data(self, profile: Profile, customized_cv: CustomizedCV) -> Dict[str, Any]:
         """
-        Prépare les données pour le template
+        Prépare les données pour le template avec condensation pour CV 1 page
 
         Args:
             profile: Profil complet
             customized_cv: CV personnalisé
 
         Returns:
-            Dict: Données pour le template
+            Dict: Données condensées pour le template
         """
 
         # Filtrer les expériences sélectionnées
@@ -133,18 +141,59 @@ class PDFGenerator:
             if proj.id in customized_cv.selected_projects
         ]
 
-        # Préparer les données
+        # Appliquer la condensation pour tenir sur 1 page
+        # Expériences: max 2 avec 4 bullets chacune
+        condensed_experiences = condense_experiences(
+            [exp.dict() for exp in selected_experiences],
+            max_count=2
+        )
+
+        # Projets: max 2 avec 3 bullets chacun
+        condensed_projects = condense_projects(
+            [proj.dict() for proj in selected_projects],
+            max_count=2
+        )
+
+        # Résumé: max 2 phrases, 40 mots
+        condensed_summary = condense_summary(customized_cv.custom_summary)
+
+        # Points forts: max 3-4, condensés à 12 mots max chacun
+        strength_rules = CONDENSATION_RULES["strength_points"]
+        condensed_strengths = [
+            condense_text(strength, strength_rules["max_words_per_point"])
+            for strength in customized_cv.strengths[:strength_rules["max_count"]]
+        ]
+
+        # Compétences: max 8
+        condensed_skills = customized_cv.selected_skills[:CONDENSATION_RULES["skills"]["max_total_displayed"]]
+
+        # Langues: max 4
+        condensed_languages = profile.languages[:4] if profile.languages else []
+
+        # Centres d'intérêt: max 5
+        condensed_interests = profile.interests[:CONDENSATION_RULES["interests"]] if profile.interests else []
+
+        # Certifications: max 2
+        condensed_certifications = (
+            profile.certifications[:CONDENSATION_RULES["certifications"]["max_count"]]
+            if profile.certifications else []
+        )
+
+        # Formation: max 2 (garde les plus récentes)
+        condensed_education = profile.education[:2] if profile.education else []
+
+        # Préparer les données condensées
         return {
             "personal_info": profile.personal_info,
-            "custom_summary": customized_cv.custom_summary,
-            "strengths": customized_cv.strengths,
-            "selected_skills": customized_cv.selected_skills,
-            "experiences": selected_experiences,
-            "projects": selected_projects,
-            "education": profile.education,
-            "languages": profile.languages,
-            "certifications": profile.certifications if profile.certifications else [],
-            "interests": profile.interests if profile.interests else [],
+            "custom_summary": condensed_summary,
+            "strengths": condensed_strengths,
+            "selected_skills": condensed_skills,
+            "experiences": condensed_experiences,
+            "projects": condensed_projects,
+            "education": condensed_education,
+            "languages": condensed_languages,
+            "certifications": condensed_certifications,
+            "interests": condensed_interests,
             "colors": customized_cv.colors,
         }
 

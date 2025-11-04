@@ -39,9 +39,9 @@ class CVPersonalizer:
         # Préparer les données du profil pour l'IA
         profile_summary = self._prepare_profile_summary(profile)
 
-        # Prompt optimisé pour les modèles locaux (plus direct et structuré)
-        system = """Tu es un expert en optimisation de CV et recrutement.
-Tu dois analyser un profil candidat et une offre d'emploi, puis personnaliser le CV pour maximiser les chances.
+        # Prompt optimisé pour CONDENSATION 1 PAGE
+        system = """Tu es un expert en optimisation de CV. Le CV DOIT tenir sur 1 PAGE.
+CONDENSE au maximum tout en gardant l'essentiel.
 Réponds UNIQUEMENT avec du JSON valide, sans texte avant ou après."""
 
         prompt = f"""PROFIL DU CANDIDAT :
@@ -56,44 +56,44 @@ OFFRE D'EMPLOI CIBLÉE :
 - Technologies : {', '.join(job_offer.technologies)}
 - Mots-clés : {', '.join(job_offer.keywords)}
 
-TÂCHE : Génère une personnalisation complète au format JSON strict :
+TÂCHE : CV 1 PAGE - CONDENSÉ et IMPACTANT. Génère ce JSON :
 
 {{
   "selected_experiences": ["id_exp1", "id_exp2"],
   "selected_projects": ["id_proj1", "id_proj2"],
-  "selected_skills": ["compétence1", "compétence2", "compétence3", ...],
+  "selected_skills": ["compétence1", "compétence2", ...8 max],
   "strengths": [
-    "Point fort 1 aligné avec le poste",
-    "Point fort 2 démontrant la pertinence",
-    "Point fort 3 mettant en valeur l'expérience",
-    "Point fort 4 soulignant une qualité unique"
+    "Point fort court 1 (max 10 mots)",
+    "Point fort court 2 (max 10 mots)",
+    "Point fort court 3 (max 10 mots)"
   ],
-  "custom_summary": "Résumé professionnel personnalisé de 2-3 phrases qui met en avant les points les plus pertinents pour ce poste spécifique.",
+  "custom_summary": "Résumé ULTRA-COURT de 2 phrases maximum (40 mots max). Direct et percutant.",
   "colors": {{"primary": "#1a73e8", "secondary": "#34a853"}}
 }}
 
-RÈGLES IMPORTANTES :
-1. selected_experiences : Choisis les 2-3 IDs d'expériences LES PLUS pertinentes (max 3)
-   - Utilise EXACTEMENT les IDs du profil (exp1, exp2, exp3, etc.)
-   - Priorise celles qui correspondent aux technologies/compétences requises
+RÈGLES STRICTES pour CV 1 PAGE :
+1. selected_experiences : SEULEMENT 2 expériences (pas 3!)
+   - Utilise EXACTEMENT les IDs du profil (exp1, exp2, etc.)
+   - Priorise celles qui correspondent aux compétences requises
 
-2. selected_projects : Choisis les 2-3 IDs de projets LES PLUS alignés (max 3)
+2. selected_projects : SEULEMENT 2 projets (pas 3!)
    - Utilise EXACTEMENT les IDs du profil (proj1, proj2, proj3, etc.)
    - Priorise ceux qui démontrent les compétences recherchées
 
-3. selected_skills : Liste 6-10 compétences prioritaires pour ce poste
+3. selected_skills : 8 compétences MAXIMUM (idéalement 6-8)
    - Utilise EXACTEMENT les noms de compétences du profil
    - Priorise celles mentionnées dans l'offre
+   - PAS PLUS de 8 pour garder l'espace limité
 
-4. strengths : 3-4 points forts concrets et mesurables
-   - Phrases courtes et percutantes
+4. strengths : 3 points forts COURTS (max 10 mots chacun)
+   - Ultra-concis et impactants
    - Liés directement au poste visé
-   - Mettent en avant la valeur ajoutée
+   - PAS de phrases longues - condensé maximum
 
-5. custom_summary : Résumé professionnel personnalisé
-   - 2-3 phrases maximum
+5. custom_summary : 2 phrases MAXIMUM (40 mots total)
+   - Résumé ultra-court et percutant
    - Met en avant les points forts pour CE poste
-   - Mentionne l'expérience et les compétences clés
+   - PAS de détails superflus - condensé au maximum
 
 6. colors : Couleurs professionnelles en hexadécimal
    - primary : couleur principale (si entreprise connue, utilise sa couleur de marque)
