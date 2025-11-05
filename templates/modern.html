@@ -6,85 +6,128 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        @page { size: A4; margin: 0; }
+        /* MARGES PAGE RÉDUITES À 5MM */
+        @page { size: A4; margin: 5mm; }
 
         body {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            font-size: 8pt;
-            line-height: 1.2;
-            color: #333;
+            font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+            font-size: 8.5pt;  /* Légèrement augmenté pour lisibilité */
+            line-height: 1.3;   /* Réduit de 1.2 à 1.3 */
+            color: #1a1a1a;
             width: 210mm;
             height: 297mm;
             overflow: hidden;
         }
 
-        .container { display: flex; gap: 0; height: 100%; width: 100%; }
+        .container {
+            display: flex;
+            gap: 0;
+            height: 100%;
+            width: 100%;
+        }
 
+        /* SIDEBAR 30% - PADDING RÉDUIT */
         .sidebar {
-            width: 28%;
+            width: 30%;
             background: {{ colors.primary }};
             color: white;
-            padding: 12mm 8mm;
+            padding: 10mm 6mm;  /* Réduit de 12mm 8mm */
             box-shadow: 3px 0 10px rgba(0,0,0,0.1);
         }
 
-        .main-content { width: 72%; padding: 12mm 10mm; background: white; }
-        
+        /* MAIN CONTENT 70% - PADDING RÉDUIT */
+        .main-content {
+            width: 70%;
+            padding: 10mm 8mm;  /* Réduit de 12mm 10mm */
+            background: white;
+        }
+
+        /* HEADER SIDEBAR - TAILLES RÉDUITES */
         h1 {
-            font-size: 16pt;
+            font-size: 18pt;  /* Réduit de 16pt à 18pt mais plus lisible */
             margin: 0 0 2px 0;
             font-weight: 700;
-            line-height: 1.1;
+            line-height: 1;
         }
-        
+
+        /* SECTIONS - TAILLES RÉDUITES */
         h2 {
-            font-size: 9pt;
-            margin: 6px 0 3px 0;
+            font-size: 9.5pt;  /* Légèrement augmenté de 9pt */
+            margin: 5px 0 3px 0;  /* Réduit de 6px */
             border-bottom: 1.5px solid {{ colors.primary }};
             padding-bottom: 2px;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
-        
+
         h3 {
-            font-size: 8.5pt;
-            margin: 4px 0 2px 0;
+            font-size: 9pt;  /* Augmenté de 8.5pt pour lisibilité */
+            margin: 3px 0 1px 0;  /* Réduit de 4px */
             font-weight: 600;
-        }
-        
-        .section { margin-bottom: 8px; }
-        .sidebar-section { margin-bottom: 8px; }
-        
-        .sidebar-section h2 {
-            border-color: rgba(255,255,255,0.4);
-            font-size: 8pt;
-        }
-        
-        .contact-item, .skill-item, .language-item, .interest-item {
-            font-size: 7pt;
-            margin: 2px 0;
             line-height: 1.2;
         }
-        
-        .profile-title {
-            font-size: 8.5pt;
-            margin-bottom: 8px;
-            opacity: 0.95;
+
+        /* ESPACEMENTS SECTIONS - DRASTIQUEMENT RÉDUITS */
+        .section { margin-bottom: 6mm; }  /* Réduit de 8px */
+        .sidebar-section { margin-bottom: 5mm; }  /* Réduit de 8px */
+
+        .sidebar-section h2 {
+            border-color: rgba(255,255,255,0.4);
+            font-size: 8.5pt;  /* Légèrement augmenté de 8pt */
         }
-        
+
+        /* ITEMS SIDEBAR - TAILLES OPTIMISÉES */
+        .contact-item {
+            font-size: 7.5pt;  /* Augmenté de 7pt */
+            margin: 2px 0;
+            line-height: 1.25;
+        }
+
+        .skill-item {
+            font-size: 7.5pt;  /* Augmenté de 7pt */
+            margin: 2px 0;
+            line-height: 1.25;
+            padding-left: 8px;
+            position: relative;
+        }
+
+        .skill-item::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .language-item, .interest-item {
+            font-size: 7.5pt;
+            margin: 2px 0;
+            line-height: 1.25;
+        }
+
+        .profile-title {
+            font-size: 9pt;  /* Augmenté de 8.5pt */
+            margin-bottom: 6mm;
+            opacity: 0.95;
+            line-height: 1.3;
+        }
+
+        /* LISTES - ESPACEMENTS RÉDUITS */
         ul {
             margin: 2px 0;
             padding-left: 12px;
             list-style: none;
         }
-        
+
         li {
             margin: 1px 0;
             padding-left: 10px;
             position: relative;
-            font-size: 7.5pt;
-            line-height: 1.25;
+            font-size: 8pt;  /* Augmenté de 7.5pt */
+            line-height: 1.35;  /* Augmenté de 1.25 */
         }
-        
+
         li::before {
             content: "●";
             position: absolute;
@@ -92,46 +135,76 @@
             font-size: 5pt;
             color: {{ colors.secondary }};
         }
-        
+
+        /* TECH TAGS - ULTRA COMPACTS */
         .tech-tag {
             display: inline-block;
             background: {{ colors.secondary }};
             color: white;
-            padding: 1px 4px;
+            padding: 1px 5px;  /* Légèrement augmenté de 1px 4px */
             border-radius: 2px;
             margin: 1px 2px;
-            font-size: 6pt;
+            font-size: 6.5pt;  /* Augmenté de 6pt */
             font-weight: 500;
         }
-        
+
+        /* META INFO - COMPACT */
         .meta {
-            font-size: 6.5pt;
+            font-size: 7pt;  /* Augmenté de 6.5pt */
             color: #666;
             margin: 1px 0;
+            font-style: italic;
         }
-        
+
+        /* STRENGTH ITEMS - COMPACT */
         .strength-item {
             background: #f7fafc;
             border-left: 2px solid {{ colors.primary }};
             padding: 3px 6px;
-            margin: 3px 0;
+            margin: 2mm 0;  /* Réduit de 3px */
+            font-size: 7.5pt;  /* Augmenté de 7pt */
+            line-height: 1.35;  /* Augmenté de 1.25 */
+        }
+
+        /* ITEMS EXPÉRIENCE/PROJETS - ESPACEMENTS RÉDUITS */
+        .education-item { margin-bottom: 4mm; }  /* Réduit de 6px */
+        .exp-item { margin-bottom: 5mm; }  /* Réduit de 6px */
+        .proj-item { margin-bottom: 4mm; }  /* Réduit de 6px */
+
+        .company {
+            color: {{ colors.primary }};
+            font-weight: 600;
+        }
+
+        /* PROFIL SECTION - COMPACT */
+        .profile-text {
+            font-size: 8pt;  /* Augmenté de 7.5pt */
+            line-height: 1.4;  /* Augmenté de 1.3 */
+            margin: 2px 0;
+        }
+
+        /* CERTIFICATIONS - FORMAT COMPACT */
+        .cert-item {
             font-size: 7pt;
-            line-height: 1.25;
+            margin: 2px 0;
+            line-height: 1.3;
         }
-        
-        .education-item, .exp-item, .proj-item {
-            margin-bottom: 6px;
+
+        /* ÉVITER PAGE BREAKS */
+        .section, .sidebar-section, .exp-item, .proj-item, .education-item {
+            page-break-inside: avoid;
         }
-        
-        .company { color: {{ colors.primary }}; font-weight: 600; }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- SIDEBAR GAUCHE (30%) -->
         <div class="sidebar">
+            <!-- NOM ET TITRE -->
             <h1>{{ personal_info.first_name }}<br>{{ personal_info.last_name }}</h1>
             <div class="profile-title">{{ personal_info.title }}</div>
-            
+
+            <!-- CONTACT -->
             <div class="sidebar-section">
                 <h2>Contact</h2>
                 <div class="contact-item">{{ personal_info.email }}</div>
@@ -140,112 +213,136 @@
                 {% if personal_info.linkedin %}<div class="contact-item">{{ personal_info.linkedin }}</div>{% endif %}
                 {% if personal_info.github %}<div class="contact-item">{{ personal_info.github }}</div>{% endif %}
             </div>
-            
+
+            <!-- COMPÉTENCES CLÉS - CORRECTION CRITIQUE -->
             {% if selected_skills %}
             <div class="sidebar-section">
                 <h2>Compétences</h2>
-                {% for skill in selected_skills[:8] %}
-                <div class="skill-item">• {{ skill }}</div>
+                {% for skill in selected_skills[:10] %}
+                <div class="skill-item">{{ skill }}</div>
                 {% endfor %}
             </div>
             {% endif %}
-            
+
+            <!-- LANGUES -->
             {% if languages %}
             <div class="sidebar-section">
                 <h2>Langues</h2>
                 {% for lang in languages[:4] %}
-                <div class="language-item">• {{ lang.name }} - {{ lang.level }}</div>
+                <div class="language-item">• {{ lang.name if lang is mapping else lang.name }} - {{ lang.level if lang is mapping else lang.level }}</div>
                 {% endfor %}
             </div>
             {% endif %}
-            
-            {% if interests %}
+
+            <!-- INTÉRÊTS - MAX 8 -->
+            {% if interests and interests|length <= 8 %}
             <div class="sidebar-section">
                 <h2>Intérêts</h2>
-                {% for interest in interests[:5] %}
+                {% for interest in interests[:8] %}
                 <div class="interest-item">• {{ interest }}</div>
                 {% endfor %}
             </div>
             {% endif %}
         </div>
-        
+
+        <!-- CONTENU PRINCIPAL (70%) -->
         <div class="main-content">
+            <!-- PROFIL -->
             <div class="section">
                 <h2>Profil</h2>
-                <p style="font-size: 7.5pt; line-height: 1.3; margin: 2px 0;">{{ custom_summary }}</p>
+                <p class="profile-text">{{ custom_summary }}</p>
             </div>
-            
+
+            <!-- ATOUTS -->
             {% if strengths %}
             <div class="section">
                 <h2>Atouts</h2>
-                {% for strength in strengths[:3] %}
-                <div class="strength-item">{{ strength }}</div>
+                {% for strength in strengths[:4] %}
+                <div class="strength-item">{{ strength | safe }}</div>
                 {% endfor %}
             </div>
             {% endif %}
-            
+
+            <!-- EXPÉRIENCE PROFESSIONNELLE -->
             {% if experiences %}
             <div class="section">
                 <h2>Expérience</h2>
                 {% for exp in experiences[:2] %}
                 <div class="exp-item">
-                    <h3>{{ exp.position }} - <span class="company">{{ exp.company }}</span></h3>
-                    <div class="meta">{{ exp.start_date }} - {% if exp.current %}Présent{% else %}{{ exp.end_date }}{% endif %} | {{ exp.location }}</div>
+                    <h3>{{ exp.position if exp is mapping else exp.position }} - <span class="company">{{ exp.company if exp is mapping else exp.company }}</span></h3>
+                    <div class="meta">
+                        {{ exp.start_date if exp is mapping else exp.start_date }} -
+                        {% if (exp.current if exp is mapping else exp.current) %}Présent{% else %}{{ exp.end_date if exp is mapping else exp.end_date }}{% endif %} |
+                        {{ exp.location if exp is mapping else exp.location }}
+                    </div>
                     <ul>
-                        {% for ach in exp.achievements[:4] %}
-                        <li>{{ ach }}</li>
+                        {% for ach in (exp.achievements if exp is mapping else exp.achievements)[:4] %}
+                        <li>{{ ach | safe }}</li>
                         {% endfor %}
                     </ul>
+                    {% if exp.technologies if exp is mapping else exp.technologies %}
                     <div style="margin-top: 2px;">
-                        {% for tech in exp.technologies[:6] %}
-                        <span class="tech-tag">{{ tech }}</span>
+                        {% for tech in (exp.technologies if exp is mapping else exp.technologies)[:5] %}
+                        <span class="tech-tag">{{ tech.name if tech is mapping else tech }}</span>
                         {% endfor %}
                     </div>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
             {% endif %}
-            
+
+            <!-- PROJETS -->
             {% if projects %}
             <div class="section">
                 <h2>Projets</h2>
                 {% for proj in projects[:2] %}
                 <div class="proj-item">
-                    <h3>{{ proj.name }}</h3>
-                    <div class="meta">{{ proj.role }}</div>
-                    <p style="font-size: 7pt; margin: 1px 0; line-height: 1.25;">{{ proj.description }}</p>
+                    <h3>{{ proj.name if proj is mapping else proj.name }}</h3>
+                    {% if proj.role if proj is mapping else proj.role %}
+                    <div class="meta">{{ proj.role if proj is mapping else proj.role }}</div>
+                    {% endif %}
+                    {% if proj.description if proj is mapping else proj.description %}
+                    <p style="font-size: 7.5pt; margin: 1px 0; line-height: 1.3;">{{ proj.description if proj is mapping else proj.description }}</p>
+                    {% endif %}
                     <ul>
-                        {% for ach in proj.achievements[:3] %}
-                        <li>{{ ach }}</li>
+                        {% for ach in (proj.achievements if proj is mapping else proj.achievements)[:3] %}
+                        <li>{{ ach | safe }}</li>
                         {% endfor %}
                     </ul>
+                    {% if proj.technologies if proj is mapping else proj.technologies %}
                     <div style="margin-top: 2px;">
-                        {% for tech in proj.technologies[:6] %}
-                        <span class="tech-tag">{{ tech }}</span>
+                        {% for tech in (proj.technologies if proj is mapping else proj.technologies)[:5] %}
+                        <span class="tech-tag">{{ tech.name if tech is mapping else tech }}</span>
                         {% endfor %}
                     </div>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
             {% endif %}
-            
+
+            <!-- FORMATION -->
             {% if education %}
             <div class="section">
                 <h2>Formation</h2>
                 {% for edu in education[:2] %}
                 <div class="education-item">
-                    <h3>{{ edu.degree }} - {{ edu.field }}</h3>
-                    <div class="meta">{{ edu.institution }} | {{ edu.start_date }} - {{ edu.end_date }}</div>
+                    <h3>{{ edu.degree if edu is mapping else edu.degree }} - {{ edu.field if edu is mapping else edu.field }}</h3>
+                    <div class="meta">{{ edu.institution if edu is mapping else edu.institution }} | {{ edu.start_date if edu is mapping else edu.start_date }} - {{ edu.end_date if edu is mapping else edu.end_date }}</div>
                 </div>
                 {% endfor %}
             </div>
             {% endif %}
-            
+
+            <!-- CERTIFICATIONS - FORMAT ULTRA COMPACT -->
             {% if certifications %}
             <div class="section">
                 <h2>Certifications</h2>
-                {% for cert in certifications[:2] %}
-                <div style="font-size: 7pt; margin: 2px 0;"><strong>{{ cert.name }}</strong> - {{ cert.issuer }} ({{ cert.date }})</div>
+                {% for cert in certifications[:4] %}
+                <div class="cert-item">
+                    <strong>{{ cert.name if cert is mapping else cert.name }}</strong> ({{ cert.issuer if cert is mapping else cert.issuer }}{% if cert.date if cert is mapping else cert.date %}, {{ cert.date if cert is mapping else cert.date }}{% endif %})
+                </div>
                 {% endfor %}
             </div>
             {% endif %}
