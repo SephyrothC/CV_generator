@@ -62,22 +62,47 @@ def prepare_skills_with_levels(profile: Profile, selected_skills: List[str]) -> 
 
     result = []
 
-    # Parcourir toutes les catégories de compétences du profil
-    for skill_category in profile.skills:
-        for skill in skill_category.skills:
-            if skill.name in selected_skills[:8]:
-                # Déterminer le niveau (par défaut 'intermediate')
-                level_value = 70  # Valeur par défaut
+    # Déterminer le type de structure de skills
+    # Nouvelle structure : dict {"category": [{"name": "...", "level": "..."}]}
+    # Ancienne structure : list[SkillCategory] avec SkillCategory.skills
 
-                # Si le skill a un attribut level, l'utiliser
-                if hasattr(skill, 'level') and skill.level:
-                    level_text = skill.level.lower()
-                    level_value = skill_levels.get(level_text, 70)
+    if isinstance(profile.skills, dict):
+        # Nouvelle structure : dictionnaire de catégories
+        for category_name, skills_list in profile.skills.items():
+            for skill in skills_list:
+                # skill est un dictionnaire
+                skill_name = skill.get('name') if isinstance(skill, dict) else getattr(skill, 'name', None)
+                skill_level = skill.get('level') if isinstance(skill, dict) else getattr(skill, 'level', None)
 
-                result.append({
-                    'name': skill.name,
-                    'level': level_value
-                })
+                if skill_name and skill_name in selected_skills[:8]:
+                    # Déterminer le niveau (par défaut 'intermediate')
+                    level_value = 70  # Valeur par défaut
+
+                    if skill_level:
+                        level_text = skill_level.lower()
+                        level_value = skill_levels.get(level_text, 70)
+
+                    result.append({
+                        'name': skill_name,
+                        'level': level_value
+                    })
+    else:
+        # Ancienne structure : liste de SkillCategory
+        for skill_category in profile.skills:
+            for skill in skill_category.skills:
+                if skill.name in selected_skills[:8]:
+                    # Déterminer le niveau (par défaut 'intermediate')
+                    level_value = 70  # Valeur par défaut
+
+                    # Si le skill a un attribut level, l'utiliser
+                    if hasattr(skill, 'level') and skill.level:
+                        level_text = skill.level.lower()
+                        level_value = skill_levels.get(level_text, 70)
+
+                    result.append({
+                        'name': skill.name,
+                        'level': level_value
+                    })
 
     return result[:8]  # Top 8 seulement
 
@@ -114,8 +139,9 @@ def prepare_languages_with_indicators(profile: Profile) -> List[Dict[str, Any]]:
 
     result = []
     for lang in profile.languages:
-        lang_name = lang.name
-        lang_level = lang.level
+        # Gérer à la fois les dictionnaires et les objets
+        lang_name = lang.get('name') if isinstance(lang, dict) else getattr(lang, 'name', '')
+        lang_level = lang.get('level') if isinstance(lang, dict) else getattr(lang, 'level', '')
 
         # Extraire le niveau des parenthèses si présent
         level_text = lang_level.split('(')[0].strip()
@@ -171,7 +197,11 @@ def prepare_certifications_with_icons(profile: Profile) -> List[Dict[str, str]]:
 
     result = []
     for cert in profile.certifications:
-        cert_name = cert.name
+        # Gérer à la fois les dictionnaires et les objets
+        cert_name = cert.get('name') if isinstance(cert, dict) else getattr(cert, 'name', '')
+        cert_issuer = cert.get('issuer') if isinstance(cert, dict) else getattr(cert, 'issuer', '')
+        cert_date = cert.get('date', '') if isinstance(cert, dict) else (getattr(cert, 'date', '') if hasattr(cert, 'date') else '')
+
         icon = '🏅'  # Icône par défaut
 
         # Trouver l'icône appropriée
@@ -182,8 +212,8 @@ def prepare_certifications_with_icons(profile: Profile) -> List[Dict[str, str]]:
 
         result.append({
             'name': cert_name,
-            'issuer': cert.issuer,
-            'date': cert.date if hasattr(cert, 'date') and cert.date else '',
+            'issuer': cert_issuer,
+            'date': cert_date,
             'icon': icon
         })
 
@@ -302,29 +332,28 @@ class PDFGenerator:
         """
 
         # Filtrer les expériences sélectionnées
-        selected_experiences = [
-            exp for exp in profile.experiences
-            if exp.id in customized_cv.selected_experiences
-        ]
+        selected_experiences = []
+        for exp in profile.experiences:
+            exp_id = exp.get('id') if isinstance(exp, dict) else getattr(exp, 'id', None)
+            if exp_id in customized_cv.selected_experiences:
+                selected_experiences.append(exp)
 
         # Filtrer les projets sélectionnés
-        selected_projects = [
-            proj for proj in profile.projects
-            if proj.id in customized_cv.selected_projects
-        ]
+        selected_projects = []
+        for proj in profile.projects:
+            proj_id = proj.get('id') if isinstance(proj, dict) else getattr(proj, 'id', None)
+            if proj_id in customized_cv.selected_projects:
+                selected_projects.append(proj)
 
         # Appliquer la condensation pour tenir sur 1 page
         # Expériences: max 2 avec 4 bullets chacune
-        condensed_experiences = condense_experiences(
-            [exp.dict() for exp in selected_experiences],
-            max_count=2
-        )
+        # Convertir en dict si ce sont des objets Pydantic
+        exp_dicts = [exp if isinstance(exp, dict) else exp.dict() for exp in selected_experiences]
+        condensed_experiences = condense_experiences(exp_dicts, max_count=2)
 
         # Projets: max 2 avec 3 bullets chacun
-        condensed_projects = condense_projects(
-            [proj.dict() for proj in selected_projects],
-            max_count=2
-        )
+        proj_dicts = [proj if isinstance(proj, dict) else proj.dict() for proj in selected_projects]
+        condensed_projects = condense_projects(proj_dicts, max_count=2)
 
         # Résumé: max 2 phrases, 40 mots
         condensed_summary = condense_summary(customized_cv.custom_summary)
