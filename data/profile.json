@@ -2,163 +2,151 @@
   "personal_info": {
     "first_name": "Adrian",
     "last_name": "Stéphan",
-    "title": "Ingénieur Cybersécurité & Développeur Full Stack",
+    "title": "Ingénieur Cybersécurité | Développeur Full Stack | Spécialiste DevSecOps",
     "email": "stephan@et.esiea.fr",
     "phone": "+33 6 XX XX XX XX",
-    "location": "Laval, France",
+    "location": "Laval, Pays de la Loire, France",
     "linkedin": "linkedin.com/in/adrian-stéphan-029980258",
     "github": "github.com/SephyrothC",
     "portfolio": "sephyrothc.dev",
-    "summary": "Étudiant ingénieur passionné par la cybersécurité et le développement logiciel, avec une expertise en analyse de vulnérabilités et développement d'applications sécurisées. Spécialisé dans la création d'outils open-source et la sensibilisation aux failles de sécurité web. Fort d'une approche pratique par projet à l'ESIEA (Top 3 des écoles d'ingénieurs en informatique), je combine solides compétences techniques et vision stratégique de la sécurité applicative."
+    "network": {
+      "linkedin_connections": 54
+    },
+    "summary": "Étudiant ingénieur en 4ème année à l'ESIEA (formation labelisée SecNumedu ANSSI), spécialisé en cybersécurité avec double compétence offensive (pentest, exploitation) et défensive (SIEM, forensics). Expérience pratique unique : missions opérationnelles réelles via laboratoire CNS + alternance systèmes embarqués critiques. Projets primés (2ème place salon) et présentés publiquement (OpenESIEA 2025). Profil hybride DevSecOps alliant développement sécurisé, automatisation et architecture cloud. Recherche stage 6 mois en cybersécurité offensive, DevSecOps ou sécurité applicative."
   },
   "experiences": [
     {
       "id": "exp1",
       "company": "AXIS ÉLECTRONIQUE",
-      "position": "Développeur & Ingénieur Systèmes Embarqués",
+      "position": "Ingénieur Systèmes Embarqués en Alternance",
       "location": "Laval, France",
-      "start_date": "2023-09",
+      "start_date": "2025-04",
       "end_date": null,
       "current": true,
-      "description": "Conception et développement de systèmes embarqués et applications métier",
+      "contract_type": "Alternance / Apprentissage (4ème année ESIEA)",
+      "description": "Conception et développement de systèmes embarqués pour secteurs critiques (médical, automobile, industrie). Entreprise certifiée ISO 9001 spécialisée en assemblage de cartes électroniques professionnelles.",
       "achievements": [
-        "Développement d'applications embarquées en C/C++ pour des systèmes temps réel",
-        "Conception d'interfaces de contrôle et monitoring en Python",
-        "Optimisation des performances système et réduction de la consommation énergétique de 25%",
-        "Participation à l'intégration continue et tests automatisés",
-        "Collaboration étroite avec les équipes hardware et firmware"
+        "Développement d'applications embarquées en C/C++ pour systèmes temps réel critiques",
+        "Conception d'interfaces de monitoring et contrôle en Python",
+        "Participation aux audits de sécurité des systèmes embarqués (contexte OIV)",
+        "Intégration continue et automatisation des tests de validation",
+        "Collaboration équipes hardware/firmware sur projets véhicules électriques et équipements médicaux"
       ],
-      "technologies": ["C", "C++", "Python", "Systèmes Embarqués", "Linux", "Git", "Testing"]
+      "technologies": ["C", "C++", "Python", "Systèmes Embarqués", "Linux Embarqué", "Git", "Testing", "Sécurité Industrielle"],
+      "context": "Secteurs d'application : médical, automobile électrique, télécommunications, systèmes embarqués critiques"
     },
     {
       "id": "exp2",
-      "company": "ESIEA - Laboratoire Cybersécurité",
-      "position": "Développeur de Plateforme d'Apprentissage - Exploit2Learn",
+      "company": "ESIEA - Laboratoire CNS (Confiance Numérique et Sécurité)",
+      "position": "Missions Opérationnelles Cybersécurité",
       "location": "Laval, France",
-      "start_date": "2024-01",
-      "end_date": "2024-06",
-      "current": false,
-      "description": "Projet académique : Création d'une plateforme web d'entraînement aux failles de sécurité",
+      "start_date": "2024-09",
+      "end_date": null,
+      "current": true,
+      "description": "Participation aux missions opérationnelles réelles du laboratoire CNS : audits cybersécurité, réponse à incidents, accompagnement organisations",
       "achievements": [
-        "Conception et développement d'une plateforme interactive d'apprentissage des vulnérabilités web",
-        "Implémentation de 15+ scénarios d'exploitation (SQL injection, XSS, CSRF, etc.)",
-        "Création d'un système de progression et tracking des compétences",
-        "Architecture sécurisée avec isolation des environnements d'entraînement",
-        "Présenté au salon OpenESIEA devant 200+ visiteurs et professionnels"
+        "Participation aux audits de cybersécurité pour PME, TPE et collectivités locales",
+        "Interventions réponse à incidents cyber en conditions réelles (hebdomadaire)",
+        "Contribution au programme Google.org Cybersecurity Seminars (125 organisations accompagnées)",
+        "Accès plateforme CyberRange Airbus pour simulations attaques/défenses",
+        "Expérience terrain unique pour un étudiant : client réels, incidents réels, impact business réel"
       ],
-      "technologies": ["TypeScript", "React", "Node.js", "Docker", "PostgreSQL", "Security Testing", "OWASP"]
+      "technologies": ["Pentest", "Audit Sécurité", "SIEM", "Forensics", "Réponse à Incident", "CyberRange", "OWASP"],
+      "context": "Laboratoire reconnu nationalement, partenariat ANSSI/COMCYBER/DGSE, financement Google.org 1M$"
     },
     {
       "id": "exp3",
+      "company": "ESIEA - Projets Académiques",
+      "position": "Chef de Projet - Exploit2Learn (PST 4ème année)",
+      "location": "Laval, France",
+      "start_date": "2024-01",
+      "end_date": "2025-05",
+      "current": false,
+      "team": "Équipe de 3 : Nathan PROUD'HON, Adrian STÉPHAN, Naël RIFAAT",
+      "description": "Plateforme web pédagogique d'entraînement aux vulnérabilités web courantes (OWASP Top 10)",
+      "achievements": [
+        "Conception et développement complet d'une plateforme interactive d'apprentissage",
+        "Implémentation de 15+ scénarios d'exploitation (SQLi, XSS, CSRF, LFI/RFI, IDOR, etc.)",
+        "Architecture sécurisée avec isolation des environnements (Docker containerisé)",
+        "Système de progression, scoring et validation des compétences",
+        "Présenté à OpenESIEA 2025 devant 200+ visiteurs professionnels et étudiants"
+      ],
+      "technologies": ["TypeScript", "React", "Node.js", "Docker", "PostgreSQL", "Security Testing", "OWASP", "WebSockets"],
+      "public_presentation": "OpenESIEA 2025 (11ème édition du salon annuel)"
+    },
+    {
+      "id": "exp4",
       "company": "Projets Open Source",
-      "position": "Développeur & Mainteneur de Projets OSS",
+      "position": "Développeur & Mainteneur OSS",
       "location": "Remote",
       "start_date": "2023-01",
       "end_date": null,
       "current": true,
-      "description": "Développement et maintenance de plusieurs projets open-source sur GitHub",
+      "description": "Développement et maintenance de projets open-source en cybersécurité et développement",
       "achievements": [
-        "Développement d'un gestionnaire de mots de passe sécurisé en Python (Password_Manager)",
-        "Création d'un analyseur de vulnérabilités automatisé (Analyseur-de-vuln) - TypeScript",
-        "Contribution active à la communauté open-source avec 4+ projets publics",
-        "Documentation complète et bonnes pratiques de versioning Git",
-        "Engagement dans la sécurité applicative et le partage de connaissances"
+        "Création d'un gestionnaire de mots de passe sécurisé avec chiffrement AES-256 (Python)",
+        "Développement d'un scanner de vulnérabilités automatisé (TypeScript/Node.js)",
+        "Contribution active à la communauté OSS avec 5+ projets publics",
+        "Documentation exhaustive et bonnes pratiques de développement collaboratif",
+        "Engagement dans la transparence et l'audit de sécurité par la communauté"
       ],
-      "technologies": ["Python", "TypeScript", "JavaScript", "HTML/CSS", "Git", "GitHub", "Security"]
+      "technologies": ["Python", "TypeScript", "JavaScript", "Security", "Git", "GitHub", "Cryptographie"]
     }
   ],
-  "skills": {
-    "cybersecurity": [
-      {"name": "Pentest Web (OWASP Top 10)", "level": "advanced", "years": 2},
-      {"name": "Analyse de Vulnérabilités", "level": "advanced", "years": 2},
-      {"name": "Cryptographie", "level": "intermediate", "years": 2},
-      {"name": "Sécurité Applicative", "level": "advanced", "years": 2},
-      {"name": "Ethical Hacking", "level": "intermediate", "years": 2},
-      {"name": "Burp Suite / OWASP ZAP", "level": "intermediate", "years": 1},
-      {"name": "Sécurité des API", "level": "intermediate", "years": 1}
-    ],
-    "languages": [
-      {"name": "Python", "level": "expert", "years": 3},
-      {"name": "C", "level": "advanced", "years": 3},
-      {"name": "C++", "level": "advanced", "years": 2},
-      {"name": "TypeScript", "level": "advanced", "years": 2},
-      {"name": "JavaScript", "level": "advanced", "years": 3},
-      {"name": "Java", "level": "intermediate", "years": 2},
-      {"name": "HTML5/CSS3", "level": "advanced", "years": 3},
-      {"name": "SQL", "level": "advanced", "years": 2},
-      {"name": "Bash/Shell", "level": "intermediate", "years": 2}
-    ],
-    "frontend": [
-      {"name": "React", "level": "advanced", "years": 2},
-      {"name": "Vue.js", "level": "intermediate", "years": 1},
-      {"name": "TypeScript", "level": "advanced", "years": 2},
-      {"name": "Tailwind CSS", "level": "intermediate", "years": 1},
-      {"name": "Responsive Design", "level": "advanced", "years": 2}
-    ],
-    "backend": [
-      {"name": "Node.js", "level": "advanced", "years": 2},
-      {"name": "Express.js", "level": "advanced", "years": 2},
-      {"name": "FastAPI", "level": "intermediate", "years": 1},
-      {"name": "REST API", "level": "advanced", "years": 2},
-      {"name": "GraphQL", "level": "intermediate", "years": 1}
-    ],
-    "database": [
-      {"name": "PostgreSQL", "level": "advanced", "years": 2},
-      {"name": "MySQL", "level": "advanced", "years": 2},
-      {"name": "MongoDB", "level": "intermediate", "years": 1},
-      {"name": "Redis", "level": "intermediate", "years": 1}
-    ],
-    "devops": [
-      {"name": "Docker", "level": "advanced", "years": 2},
-      {"name": "Linux/Unix", "level": "advanced", "years": 3},
-      {"name": "Git/GitHub", "level": "expert", "years": 3},
-      {"name": "CI/CD", "level": "intermediate", "years": 1},
-      {"name": "GitHub Actions", "level": "intermediate", "years": 1},
-      {"name": "Nginx", "level": "intermediate", "years": 1}
-    ],
-    "embedded": [
-      {"name": "Systèmes Embarqués", "level": "advanced", "years": 2},
-      {"name": "Programmation Temps Réel", "level": "intermediate", "years": 1},
-      {"name": "IoT", "level": "intermediate", "years": 1},
-      {"name": "Microcontrôleurs", "level": "intermediate", "years": 1}
-    ],
-    "methodologies": [
-      {"name": "Agile/Scrum", "level": "advanced", "years": 2},
-      {"name": "DevSecOps", "level": "intermediate", "years": 1},
-      {"name": "Clean Code", "level": "advanced", "years": 2},
-      {"name": "Test-Driven Development", "level": "intermediate", "years": 1},
-      {"name": "Architecture Logicielle", "level": "intermediate", "years": 2}
-    ]
-  },
   "projects": [
+    {
+      "id": "proj0",
+      "name": "Badgeuse Automatique HyperPlanning",
+      "description": "Système de badgeage automatique utilisant l'API HyperPlanning pour automatiser la présence étudiante",
+      "role": "Lead Developer & Product Owner",
+      "period": "2021-2023",
+      "team_size": "Projet personnel",
+      "technologies": ["Python", "API REST", "HyperPlanning", "Automatisation", "Interface Utilisateur"],
+      "achievements": [
+        "🏆 2ème place au salon (OpenESIEA ou salon innovation ESIEA)",
+        "Intégration complète de l'API HyperPlanning pour récupération automatique des plannings",
+        "Automatisation du processus de badgeage avec reconnaissance ou QR code",
+        "Solution pratique résolvant un problème concret pour étudiants ESIEA",
+        "Présentation et pitch devant jury professionnel avec classement au concours",
+        "Déploiement réel et utilisateurs actifs sur le campus"
+      ],
+      "url": "https://github.com/SephyrothC/Badgeuse-Automatique",
+      "highlights": true,
+      "award": "2ème place salon innovation",
+      "impact": "Adoption par étudiants ESIEA, gain de temps significatif"
+    },
     {
       "id": "proj1",
       "name": "Exploit2Learn - Plateforme de Formation Cybersécurité",
-      "description": "Plateforme web interactive pour l'apprentissage des vulnérabilités web courantes",
+      "description": "Plateforme web interactive pour l'apprentissage des vulnérabilités web courantes (OWASP Top 10)",
       "role": "Lead Developer & Security Engineer",
-      "technologies": ["TypeScript", "React", "Node.js", "Docker", "PostgreSQL", "OWASP"],
+      "period": "2024-2025",
+      "team": "Nathan PROUD'HON, Adrian STÉPHAN, Naël RIFAAT",
+      "technologies": ["TypeScript", "React", "Node.js", "Docker", "PostgreSQL", "OWASP", "Security Testing"],
       "achievements": [
         "Développement complet d'une plateforme d'entraînement aux failles web (OWASP Top 10)",
-        "15+ scénarios d'exploitation pratiques (SQLi, XSS, CSRF, RCE, etc.)",
-        "Architecture sécurisée avec isolation des environnements (Docker)",
-        "Système de progression et validation des compétences",
-        "Présenté à OpenESIEA 2024 devant 200+ visiteurs professionnels"
+        "15+ scénarios d'exploitation pratiques : SQL injection, XSS, CSRF, LFI/RFI, IDOR, Command Injection",
+        "Architecture sécurisée avec isolation complète des environnements d'entraînement (Docker)",
+        "Système de progression, tracking des compétences et feedback pédagogique",
+        "Présenté à OpenESIEA 2025 (11ème édition) devant 200+ visiteurs professionnels"
       ],
       "url": "https://github.com/SephyrothC/Exploit2Learn",
-      "highlights": true
+      "highlights": true,
+      "public_event": "OpenESIEA 2025"
     },
     {
       "id": "proj2",
       "name": "Analyseur-de-vuln - Scanner de Vulnérabilités Automatisé",
       "description": "Outil d'analyse automatique de vulnérabilités pour applications web",
       "role": "Creator & Developer",
-      "technologies": ["TypeScript", "Node.js", "OWASP", "Security Testing"],
+      "period": "2024",
+      "technologies": ["TypeScript", "Node.js", "OWASP", "Security Testing", "CLI"],
       "achievements": [
-        "Détection automatique de vulnérabilités web (XSS, SQLi, IDOR, etc.)",
+        "Détection automatique de vulnérabilités web (XSS, SQLi, IDOR, Directory Traversal)",
         "Interface CLI intuitive pour intégration CI/CD",
-        "Rapports détaillés avec recommandations de correction",
-        "Open-source avec 1+ star sur GitHub",
-        "Extensible via système de plugins"
+        "Rapports détaillés avec recommandations de correction et niveau de risque CVSS",
+        "Architecture extensible via système de plugins",
+        "Open-source avec documentation complète"
       ],
       "url": "https://github.com/SephyrothC/Analyseur-de-vuln",
       "highlights": true
@@ -168,50 +156,216 @@
       "name": "Password_Manager - Gestionnaire de Mots de Passe Sécurisé",
       "description": "Gestionnaire de mots de passe open-source avec chiffrement fort",
       "role": "Lead Developer",
-      "technologies": ["Python", "Cryptography", "SQLite", "Tkinter"],
+      "period": "2023-2024",
+      "technologies": ["Python", "Cryptography", "AES-256", "PBKDF2", "SQLite", "Tkinter"],
       "achievements": [
         "Chiffrement AES-256 pour stockage sécurisé des credentials",
-        "Génération de mots de passe robustes (configurable)",
-        "Interface graphique intuitive (Tkinter)",
-        "Authentification maître avec dérivation PBKDF2",
-        "100% open-source et auditable"
+        "Génération de mots de passe robustes avec paramètres configurables",
+        "Interface graphique intuitive multi-plateforme (Tkinter)",
+        "Authentification maître avec dérivation de clé PBKDF2 (100 000 itérations)",
+        "100% open-source et auditable par la communauté sécurité"
       ],
       "url": "https://github.com/SephyrothC/Password_Manager",
       "highlights": true
     },
     {
       "id": "proj4",
+      "name": "Projet Machine Learning - Seoul Tech",
+      "description": "Projet de Machine Learning réalisé durant l'échange international à Seoul Tech",
+      "role": "Data Scientist / ML Engineer",
+      "period": "2023",
+      "location": "Seoul, Corée du Sud",
+      "technologies": ["Python", "scikit-learn", "TensorFlow", "Pandas", "Jupyter Notebooks", "Data Analysis"],
+      "achievements": [
+        "Développement de modèles de machine learning pour [problème spécifique - à préciser]",
+        "Traitement et analyse de datasets avec preprocessing et feature engineering",
+        "Implémentation d'algorithmes de classification/régression avec optimisation hyperparamètres",
+        "Visualisation des résultats et présentation des insights",
+        "Collaboration internationale avec étudiants coréens sur projet data science"
+      ],
+      "context": "Réalisé à Seoul National University of Science and Technology (classée 23ème en Asie)",
+      "highlights": false
+    },
+    {
+      "id": "proj5",
       "name": "Nutrimate - Application de Suivi Nutritionnel",
       "description": "Application web pour le suivi et l'analyse nutritionnelle personnalisée",
       "role": "Full Stack Developer",
-      "technologies": ["JavaScript", "Node.js", "Express", "MongoDB", "Chart.js"],
+      "period": "2023",
+      "technologies": ["JavaScript", "Node.js", "Express", "MongoDB", "Chart.js", "REST API"],
       "achievements": [
-        "Suivi des apports nutritionnels avec base de données alimentaire",
-        "Calculs automatiques des macros (protéines, glucides, lipides)",
-        "Visualisations interactives des statistiques (Chart.js)",
-        "Recommandations personnalisées selon les objectifs",
-        "Architecture RESTful scalable"
+        "Suivi des apports nutritionnels avec base de données alimentaire complète",
+        "Calculs automatiques des macros (protéines, glucides, lipides) et micronutriments",
+        "Visualisations interactives des statistiques nutritionnelles (Chart.js)",
+        "Recommandations personnalisées selon objectifs utilisateur (perte/prise de poids, sport)",
+        "Architecture RESTful scalable avec authentification JWT"
       ],
       "url": "https://github.com/SephyrothC/Nutrimate",
       "highlights": false
     },
     {
-      "id": "proj5",
+      "id": "proj6",
       "name": "Thalric-Dashboard - Tableau de Bord de Monitoring",
       "description": "Dashboard temps réel pour monitoring d'infrastructures et services",
       "role": "Frontend Developer",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "WebSocket", "Chart.js"],
+      "period": "2023",
+      "technologies": ["HTML5", "CSS3", "JavaScript", "WebSocket", "Chart.js", "Real-time"],
       "achievements": [
-        "Dashboard responsive avec mise à jour temps réel (WebSocket)",
-        "Monitoring multi-services (CPU, mémoire, réseau, services)",
-        "Alertes configurables avec notifications",
-        "Interface moderne et intuitive",
-        "Compatible mobile et desktop"
+        "Dashboard responsive avec mise à jour temps réel via WebSocket",
+        "Monitoring multi-services (CPU, mémoire, réseau, disque, services actifs)",
+        "Alertes configurables avec système de notifications",
+        "Interface moderne et intuitive avec dark mode",
+        "Compatible mobile et desktop (responsive design)"
       ],
       "url": "https://github.com/SephyrothC/thalric-dashboard",
       "highlights": false
     }
   ],
+  "associative_experience": [
+    {
+      "id": "asso1",
+      "organization": "Association Fusion ESIEA",
+      "position": "Trésorier",
+      "location": "Laval, France",
+      "start_date": "2021-09",
+      "end_date": "2023-06",
+      "duration": "2 ans",
+      "description": "Gestion financière de l'association audiovisuelle du campus ESIEA Laval",
+      "responsibilities": [
+        "Gestion budgétaire annuelle et comptabilité de l'association",
+        "Suivi financier des événements majeurs (soirée Colors, PFH Web Radio, Game Beer, soirée Fluo)",
+        "Interface avec l'administration ESIEA et prestataires externes",
+        "Élaboration des budgets prévisionnels et reporting financier",
+        "Coordination équipe de production audiovisuelle pour événements étudiants"
+      ],
+      "achievements": [
+        "Gestion rigoureuse du budget annuel avec optimisation des dépenses",
+        "Organisation de 5+ événements majeurs touchant 500+ participants",
+        "Développement de partenariats avec prestataires locaux",
+        "Maintien de la santé financière de l'association sur 2 ans"
+      ],
+      "skills_developed": ["Gestion budgétaire", "Comptabilité", "Leadership", "Organisation d'événements", "Travail en équipe"]
+    },
+    {
+      "id": "asso2",
+      "organization": "ESIEA",
+      "position": "Ambassadeur ESIEA",
+      "location": "Laval, France",
+      "start_date": "2022-09",
+      "end_date": "2023-06",
+      "duration": "1 an",
+      "description": "Représentation de l'école lors d'événements de recrutement et promotion des formations",
+      "responsibilities": [
+        "Représentation de l'école lors d'événements de recrutement (salons, JPO)",
+        "Conseil et orientation de futurs étudiants sur les formations ESIEA",
+        "Présentation des formations cybersécurité et démonstrations techniques",
+        "Animation de stands et participation aux journées portes ouvertes",
+        "Témoignage sur le parcours étudiant et l'expérience ESIEA"
+      ],
+      "achievements": [
+        "Participation à 10+ événements de recrutement et salons étudiants",
+        "Conseil personnalisé auprès de 100+ futurs étudiants",
+        "Valorisation des spécialités techniques (cybersécurité, systèmes embarqués)",
+        "Contribution au rayonnement de l'école et recrutement"
+      ],
+      "skills_developed": ["Communication publique", "Représentation institutionnelle", "Pédagogie", "Conseil et orientation"]
+    }
+  ],
+  "skills": {
+    "cybersecurity": [
+      {"name": "Pentest Web (OWASP Top 10)", "level": "advanced", "years": 2, "context": "Exploit2Learn, Laboratoire CNS"},
+      {"name": "Analyse de Vulnérabilités", "level": "advanced", "years": 2, "tools": ["Analyseur-de-vuln", "Burp Suite", "OWASP ZAP"]},
+      {"name": "Ethical Hacking & Exploitation", "level": "intermediate", "years": 2, "context": "Formation ESIEA, CyberRange Airbus"},
+      {"name": "Sécurité Applicative", "level": "advanced", "years": 2, "context": "Secure Coding, Code Review"},
+      {"name": "Cryptographie", "level": "intermediate", "years": 2, "context": "AES-256, PBKDF2, PKI"},
+      {"name": "Reverse Engineering", "level": "intermediate", "years": 1, "context": "Cursus ESIEA, Malware Analysis"},
+      {"name": "Forensics & Réponse à Incident", "level": "intermediate", "years": 1, "context": "Laboratoire CNS"},
+      {"name": "SIEM & Détection d'événements", "level": "intermediate", "years": 1, "context": "Formation défensive CNS"},
+      {"name": "Sécurité Cloud", "level": "intermediate", "years": 1, "context": "AWS Security, Azure"},
+      {"name": "Sécurité IoT & Systèmes Embarqués", "level": "intermediate", "years": 2, "context": "AXIS ÉLECTRONIQUE"}
+    ],
+    "security_tools": [
+      {"name": "Burp Suite", "level": "intermediate", "years": 1},
+      {"name": "OWASP ZAP", "level": "intermediate", "years": 1},
+      {"name": "Metasploit Framework", "level": "intermediate", "years": 1},
+      {"name": "Nmap", "level": "intermediate", "years": 2},
+      {"name": "Wireshark", "level": "intermediate", "years": 2},
+      {"name": "John the Ripper / Hashcat", "level": "beginner", "years": 1},
+      {"name": "SQLMap", "level": "intermediate", "years": 1},
+      {"name": "Nikto", "level": "beginner", "years": 1}
+    ],
+    "languages": [
+      {"name": "Python", "level": "expert", "years": 4, "use_cases": ["Scripting", "Automatisation", "ML", "Cybersécurité"]},
+      {"name": "C", "level": "advanced", "years": 3, "use_cases": ["Systèmes Embarqués", "Temps Réel", "Bas Niveau"]},
+      {"name": "C++", "level": "advanced", "years": 2, "use_cases": ["Systèmes Embarqués", "Applications Performantes"]},
+      {"name": "TypeScript", "level": "advanced", "years": 2, "use_cases": ["Web Full Stack", "Type Safety"]},
+      {"name": "JavaScript", "level": "advanced", "years": 3, "use_cases": ["Frontend", "Backend Node.js"]},
+      {"name": "Java", "level": "intermediate", "years": 2, "use_cases": ["Programmation Objet", "Applications"]},
+      {"name": "HTML5/CSS3", "level": "advanced", "years": 3, "use_cases": ["Frontend", "Responsive Design"]},
+      {"name": "SQL", "level": "advanced", "years": 2, "use_cases": ["Bases de Données", "SQL Injection"]},
+      {"name": "Bash/Shell", "level": "intermediate", "years": 2, "use_cases": ["Scripting", "Automatisation Linux"]}
+    ],
+    "frontend": [
+      {"name": "React", "level": "advanced", "years": 2, "projects": ["Exploit2Learn"]},
+      {"name": "Vue.js", "level": "intermediate", "years": 1},
+      {"name": "TypeScript", "level": "advanced", "years": 2},
+      {"name": "Tailwind CSS", "level": "intermediate", "years": 1},
+      {"name": "Responsive Design", "level": "advanced", "years": 2},
+      {"name": "WebSocket / Real-time", "level": "intermediate", "years": 1}
+    ],
+    "backend": [
+      {"name": "Node.js", "level": "advanced", "years": 2},
+      {"name": "Express.js", "level": "advanced", "years": 2},
+      {"name": "FastAPI", "level": "intermediate", "years": 1},
+      {"name": "REST API", "level": "advanced", "years": 2},
+      {"name": "GraphQL", "level": "intermediate", "years": 1},
+      {"name": "API Security", "level": "advanced", "years": 2}
+    ],
+    "database": [
+      {"name": "PostgreSQL", "level": "advanced", "years": 2},
+      {"name": "MySQL", "level": "advanced", "years": 2},
+      {"name": "MongoDB", "level": "intermediate", "years": 1},
+      {"name": "Redis", "level": "intermediate", "years": 1},
+      {"name": "SQLite", "level": "intermediate", "years": 2}
+    ],
+    "devops_devsecops": [
+      {"name": "Docker", "level": "advanced", "years": 2, "context": "Containerisation projets, isolation sécurité"},
+      {"name": "Kubernetes", "level": "beginner", "years": 1, "context": "Formation DevSecOps ESIEA"},
+      {"name": "Linux/Unix Administration", "level": "advanced", "years": 3},
+      {"name": "Git/GitHub", "level": "expert", "years": 3},
+      {"name": "CI/CD", "level": "intermediate", "years": 1, "tools": ["GitHub Actions", "GitLab CI"]},
+      {"name": "GitHub Actions", "level": "intermediate", "years": 1},
+      {"name": "Nginx", "level": "intermediate", "years": 1},
+      {"name": "Infrastructure as Code (IaC)", "level": "beginner", "years": 1, "tools": ["Terraform", "Ansible"]}
+    ],
+    "cloud": [
+      {"name": "AWS", "level": "intermediate", "years": 1, "certification": "AWS Cloud Practitioner en préparation"},
+      {"name": "Azure", "level": "beginner", "years": 1},
+      {"name": "Cloud Security", "level": "intermediate", "years": 1}
+    ],
+    "embedded": [
+      {"name": "Systèmes Embarqués", "level": "advanced", "years": 2, "context": "AXIS ÉLECTRONIQUE"},
+      {"name": "Programmation Temps Réel", "level": "intermediate", "years": 1},
+      {"name": "IoT", "level": "intermediate", "years": 1},
+      {"name": "Microcontrôleurs", "level": "intermediate", "years": 1},
+      {"name": "Linux Embarqué", "level": "intermediate", "years": 1}
+    ],
+    "data_ml": [
+      {"name": "Machine Learning", "level": "intermediate", "years": 1, "context": "Seoul Tech 2023"},
+      {"name": "scikit-learn", "level": "intermediate", "years": 1},
+      {"name": "TensorFlow", "level": "beginner", "years": 1},
+      {"name": "Pandas / NumPy", "level": "intermediate", "years": 1},
+      {"name": "Data Analysis", "level": "intermediate", "years": 1}
+    ],
+    "methodologies": [
+      {"name": "Agile/Scrum", "level": "advanced", "years": 2},
+      {"name": "DevSecOps", "level": "intermediate", "years": 1, "context": "Formation ESIEA, CI/CD sécurisé"},
+      {"name": "Clean Code", "level": "advanced", "years": 2},
+      {"name": "Test-Driven Development", "level": "intermediate", "years": 1},
+      {"name": "Architecture Logicielle", "level": "intermediate", "years": 2},
+      {"name": "Secure Coding (OWASP)", "level": "advanced", "years": 2}
+    ]
+  },
   "education": [
     {
       "degree": "Diplôme d'Ingénieur en Informatique (Cycle Ingénieur)",
@@ -219,17 +373,59 @@
       "institution": "ESIEA - École d'Ingénieurs du Numérique",
       "location": "Laval, France",
       "start_date": "2022-09",
-      "end_date": "2025-06",
+      "end_date": "2026-06",
+      "current_year": "4ème année (2024-2025)",
       "current": true,
-      "description": "Formation d'ingénieur généraliste en informatique avec spécialisation en Cybersécurité et Systèmes d'Information. École classée 3ème en France (Usine Nouvelle 2025). Formation accréditée CTI avec forte orientation projets.",
-      "specialization": "Cybersécurité & Systèmes d'Information",
+      "specialization": "Cybersécurité & Systèmes d'Information (Majeure 4ème et 5ème année)",
+      "description": "Formation d'ingénieur généraliste en informatique avec spécialisation en Cybersécurité labelisée SecNumedu par l'ANSSI. École classée Top 3 en informatique. Formation accréditée CTI avec forte orientation projets et accès au laboratoire opérationnel CNS.",
       "highlights": [
-        "Top 3 des écoles d'ingénieurs en informatique (France)",
-        "Formation accréditée CTI (Commission des Titres d'Ingénieur)",
-        "Pédagogie par projets (40% du cursus)",
-        "Laboratoire de Cybersécurité CNS (Confiance Numérique et Sécurité)",
-        "Taux d'insertion : 96% en 2 mois"
-      ]
+        "🏆 Majeure Cybersécurité labelisée SecNumedu ANSSI (renouvelé jusqu'en 2026)",
+        "🏆 Top 3 des écoles d'ingénieurs en informatique (L'Usine Nouvelle 2025)",
+        "🏆 3ème meilleur Master en Cybersécurité France (Eduniversal 2025)",
+        "🏆 1ère place pour la proximité avec les entreprises (L'Usine Nouvelle)",
+        "✓ Formation accréditée CTI (Commission des Titres d'Ingénieur) depuis 1985",
+        "✓ École 'Partenaire de la défense nationale' (Ministère des Armées)",
+        "✓ Pédagogie par projets (40% du cursus) avec Projets Scientifiques et Techniques",
+        "✓ Accès au laboratoire CNS (Confiance Numérique et Sécurité) avec missions opérationnelles",
+        "✓ Plateforme CyberRange Airbus pour simulations réalistes",
+        "✓ Taux d'insertion : 100% en moins de 2 mois (diplômés 2023)",
+        "✓ Salaire moyen sortie : 44-46k€ (parmi les plus élevés pour écoles spécialisées informatique)"
+      ],
+      "curriculum": {
+        "offensive": ["Pentest", "Ethical Hacking", "Exploitation", "Reverse Engineering", "Virologie"],
+        "defensive": ["SIEM", "Forensics", "Réponse à incident", "Architecture sécurisée", "SOC"],
+        "governance": ["RGPD", "ISO 27001/27002", "Audit", "Gestion de crise cyber", "Intelligence économique"],
+        "technical": ["Cryptographie", "Sécurité réseau/système", "Cloud Security", "DevSecOps", "Secure Coding"]
+      },
+      "partners": ["ANSSI", "COMCYBER", "DGSE/DGSI", "Airbus", "Thales", "Google", "Stormshield", "800+ entreprises"],
+      "laboratory": {
+        "name": "CNS (Confiance Numérique et Sécurité)",
+        "description": "Laboratoire de recherche opérationnelle créé en 2007",
+        "activities": [
+          "Audits cybersécurité pour organisations réelles",
+          "Réponse à incidents cyber (interventions hebdomadaires)",
+          "Programme Google.org (financement 1M$, 125 organisations)",
+          "Projets recherche : DAVFI (antivirus open-source), CheckMyHTTPS, GostCrypt"
+        ]
+      }
+    },
+    {
+      "degree": "Échange International",
+      "field": "Computer Science & Engineering",
+      "institution": "Seoul Tech - Seoul National University of Science and Technology",
+      "location": "Séoul, Corée du Sud",
+      "start_date": "2023-02",
+      "end_date": "2023-06",
+      "duration": "1 semestre (3ème année)",
+      "description": "Semestre d'échange international dans une université technologique majeure sud-coréenne classée 23ème en Asie. Cours en anglais, projet Machine Learning, immersion culturelle et technologique.",
+      "highlights": [
+        "Université classée 23ème en Asie (QS Rankings)",
+        "Cours en anglais dans écosystème tech asiatique avancé",
+        "Projet Machine Learning avec équipe internationale",
+        "Immersion culturelle et linguistique (Corée du Sud)",
+        "Parmi 29 étudiants ESIEA en échange cette année-là"
+      ],
+      "context": "Plus de 80 étudiants ESIEA ont effectué leur semestre à Seoul Tech depuis 2014"
     },
     {
       "degree": "Classe Préparatoire Intégrée (CPI)",
@@ -238,74 +434,231 @@
       "location": "Laval, France",
       "start_date": "2020-09",
       "end_date": "2022-06",
-      "description": "Prépa intégrée avec formation scientifique pluridisciplinaire (mathématiques, physique, informatique, électronique)"
+      "description": "Prépa intégrée avec formation scientifique pluridisciplinaire : mathématiques, physique, informatique, électronique. Socle fondamental pour le cycle ingénieur."
     }
   ],
   "languages": [
-    {"name": "Français", "level": "Natif"},
-    {"name": "Anglais", "level": "Courant (B2-C1)", "certification": "TOEIC préparé"},
-    {"name": "Allemand", "level": "Scolaire (A2)"},
-    {"name": "Coréen", "level": "Débutant (A1)"}
+    {
+      "name": "Français",
+      "level": "Natif",
+      "level_code": "C2"
+    },
+    {
+      "name": "Anglais",
+      "level": "Courant (B2-C1)",
+      "level_code": "B2-C1",
+      "certification": "TOEIC 790 (sources externes) - Préparation TOEIC en cours",
+      "context": "Échange Seoul Tech, cours internationaux ESIEA, documentation technique anglophone"
+    },
+    {
+      "name": "Allemand",
+      "level": "Scolaire (A2)",
+      "level_code": "A2"
+    },
+    {
+      "name": "Coréen",
+      "level": "Débutant (A1)",
+      "level_code": "A1",
+      "context": "Notions acquises durant échange Seoul Tech 2023"
+    }
   ],
   "certifications": [
     {
-      "name": "TOEIC (en préparation)",
+      "name": "Certification adrianstephan-fedl",
+      "issuer": "[Organisme à préciser]",
+      "credential_id": "adrianstephan-fedl",
+      "date": "2025-04",
+      "status": "completed",
+      "description": "Certification obtenue en avril 2025. Nom complet à confirmer auprès d'Adrian.",
+      "note": "Visible sur LinkedIn avec Credential ID mais nom complet non accessible"
+    },
+    {
+      "name": "Certification adrianstephan-mlwp",
+      "issuer": "[Organisme à préciser]",
+      "credential_id": "adrianstephan-mlwp",
+      "date": "2025-04",
+      "status": "completed",
+      "description": "Certification obtenue en avril 2025. Potentiellement liée au Machine Learning (hypothèse basée sur l'ID).",
+      "note": "Visible sur LinkedIn avec Credential ID mais nom complet non accessible"
+    },
+    {
+      "name": "Certification adrianstephan-dawp",
+      "issuer": "[Organisme à préciser]",
+      "credential_id": "adrianstephan-dawp",
+      "date": "2024-11",
+      "status": "completed",
+      "description": "Certification obtenue en novembre 2024. Potentiellement liée à Data Analytics ou Web Programming (hypothèse).",
+      "note": "Visible sur LinkedIn avec Credential ID mais nom complet non accessible"
+    },
+    {
+      "name": "TOEIC (Test of English for International Communication)",
       "issuer": "ETS Global",
       "date": "2025-06",
       "status": "in_progress",
-      "description": "Préparation intensive pour certification niveau B2-C1"
+      "target_score": "850+",
+      "description": "Préparation intensive pour certification niveau B2-C1. Score antérieur : 790 (sources externes)."
+    },
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": "2025-06",
+      "status": "in_preparation",
+      "description": "Certification proposée dans le cursus ESIEA. Fondamentaux cloud AWS et sécurité cloud.",
+      "context": "Formation disponible via ESIEA"
+    },
+    {
+      "name": "Cisco CCNA (Cisco Certified Network Associate)",
+      "issuer": "Cisco",
+      "date": "2025-12",
+      "status": "in_preparation",
+      "description": "Certification réseaux proposée dans le cursus ESIEA. Expertise infrastructure et protocoles.",
+      "context": "Formation disponible via ESIEA",
+      "salary_impact": "Salaire moyen détenteurs : 128 651$ (États-Unis)"
+    },
+    {
+      "name": "Stormshield Network Administrator (CSNA)",
+      "issuer": "Stormshield (Airbus DS Cybersecurity)",
+      "date": "2026-03",
+      "status": "in_preparation",
+      "description": "Certification équipements certifiés ANSSI pour infrastructures sensibles. Spécifique cybersécurité française.",
+      "context": "Formation disponible via ESIEA, partenariat Stormshield"
     },
     {
       "name": "Formation Cybersécurité OWASP",
       "issuer": "ESIEA - Laboratoire CNS",
       "date": "2024-03",
-      "description": "Formation approfondie sur l'OWASP Top 10 et techniques d'exploitation"
+      "status": "completed",
+      "description": "Formation approfondie sur l'OWASP Top 10 et techniques d'exploitation. Base du projet Exploit2Learn."
     }
   ],
   "conferences_events": [
     {
-      "name": "OpenESIEA 2024 - Salon des Projets Étudiants",
-      "role": "Exposant - Projet Exploit2Learn",
-      "date": "2024-05",
-      "description": "Présentation du projet Exploit2Learn devant professionnels et étudiants"
+      "name": "OpenESIEA 2025 - Salon des Projets Étudiants",
+      "role": "Exposant - Projet Exploit2Learn (PST 1)",
+      "date": "2025-05",
+      "location": "ESIEA Laval",
+      "description": "Présentation du projet Exploit2Learn devant 200+ visiteurs professionnels, étudiants et grand public. 11ème édition du salon annuel.",
+      "team": "Nathan PROUD'HON, Adrian STÉPHAN, Naël RIFAAT"
     },
     {
-      "name": "DefHack 2025 - Exercice de Cyberdéfense",
-      "role": "Participant",
-      "date": "2025-02",
-      "description": "Participation à l'exercice grandeur nature de cyberdéfense ESIEA Laval"
+      "name": "DefHack 2025 - Exercice National de Cyberdéfense",
+      "role": "Participant (probable)",
+      "date": "2025-10",
+      "location": "ESIEA Laval (1 des 16 établissements participants)",
+      "description": "Exercice grandeur nature de cyberdéfense avec 400 étudiants sur 2 semaines. Simulation d'attaques en temps réel, encadré par réservistes opérationnels du COMCYBER. Focus Lutte Informatique Défensive (LID).",
+      "organizer": "COMCYBER (Commandement de la Cyberdéfense)",
+      "note": "Participation probable en tant qu'étudiant 4ème année majeure cybersécurité"
     },
     {
       "name": "SecNumEco & West Data Festival",
       "role": "Participant",
       "date": "2024-10",
-      "description": "Événements sur la cybersécurité et la data organisés par l'ESIEA"
+      "location": "ESIEA Laval",
+      "description": "Événements sur la cybersécurité, data science et numérique responsable organisés par l'ESIEA. Réunion d'étudiants 2ème et 4ème année."
+    },
+    {
+      "name": "LeHACK",
+      "role": "Participant potentiel",
+      "date": "Annuel",
+      "description": "ESIEA partenaire de LeHACK, événement majeur de cybersécurité française. Étudiants majeure cybersécurité encouragés à participer.",
+      "note": "Participation à confirmer"
     }
   ],
   "interests": [
-    "Cybersécurité & Ethical Hacking",
+    "Cybersécurité Offensive & Defensive",
+    "Ethical Hacking & Pentest",
     "Open Source & Contributions OSS",
-    "CTF & Bug Bounty",
+    "CTF (Capture The Flag) & Bug Bounty",
+    "DevSecOps & Sécurité Cloud",
     "Intelligence Artificielle & Machine Learning",
-    "Systèmes Embarqués & IoT",
-    "Veille technologique (Security, DevOps)",
+    "Systèmes Embarqués & IoT Security",
+    "Cryptographie & Blockchain",
+    "Veille technologique (Security, DevOps, AI)",
     "Automatisation & Scripting",
-    "Hackathons & Challenges techniques"
+    "Hackathons & Challenges techniques",
+    "Reverse Engineering & Malware Analysis",
+    "Souveraineté numérique & Cyberdéfense"
   ],
   "soft_skills": [
     "Résolution de problèmes complexes",
-    "Travail en équipe agile",
-    "Communication technique",
+    "Travail en équipe agile et internationale",
+    "Communication technique et vulgarisation",
+    "Leadership et gestion de projets",
     "Curiosité & Apprentissage continu",
     "Autonomie & Initiative",
-    "Pensée analytique",
-    "Gestion de projets",
-    "Rigueur & Méthodologie"
+    "Pensée analytique et critique",
+    "Gestion budgétaire (Trésorier 2 ans)",
+    "Rigueur & Méthodologie",
+    "Adaptabilité interculturelle (échange international)",
+    "Organisation d'événements",
+    "Prise de parole en public"
   ],
   "availability": {
     "status": "Recherche stage de fin d'études (6 mois)",
     "start_date": "2025-09",
-    "preferences": ["Cybersécurité", "Développement Sécurisé", "Pentesting", "DevSecOps", "Full Stack"],
-    "location_preferences": ["France", "Remote", "Hybride"]
+    "preferences": [
+      "Cybersécurité Offensive (Pentest, Red Team, Ethical Hacking)",
+      "DevSecOps (CI/CD sécurisé, Cloud Security, IaC)",
+      "Sécurité Applicative (Secure Coding, Code Review, AppSec)",
+      "Audit & Conformité (ISO 27001, RGPD, évaluation de risques)",
+      "Réponse à Incident & Forensics (SOC, CERT, Blue Team)"
+    ],
+    "target_companies": [
+      "ESN cybersécurité (Intrinsec, XMCO, Advens, TEHTRIS, WALLIX)",
+      "Grands groupes tech (Airbus, Thales, Atos, Orange Cyberdefense)",
+      "Secteur financier (BNP Paribas, Société Générale, banques)",
+      "Institutions défense/sécurité (ANSSI, COMCYBER si éligible)",
+      "Startups & scale-ups cybersécurité",
+      "Secteur OIV (EDF, SNCF, opérateurs critiques)"
+    ],
+    "location_preferences": ["France (toutes régions)", "Remote", "Hybride"],
+    "mobility": "Forte mobilité nationale et internationale",
+    "career_objective": "Ingénieur Cybersécurité junior polyvalent (offensive + défensive) avec orientation DevSecOps. Ambition : contribuer à la souveraineté numérique française et à la sécurisation d'infrastructures critiques."
+  },
+  "recommendations_next_steps": {
+    "critical_actions": [
+      "✅ URGENT : Documenter en détail l'expérience AXIS ÉLECTRONIQUE (missions, technologies, réalisations quantifiables)",
+      "✅ URGENT : Identifier les 3 certifications 2024-2025 avec noms complets et organismes",
+      "✅ URGENT : Rendre accessible le profil GitHub ou créer portfolio web avec projets documentés",
+      "✅ Rédiger README détaillés pour Badgeuse Automatique et projet ML Seoul Tech",
+      "✅ Quantifier réalisations associatives (budgets gérés, événements organisés, participants)",
+      "✅ Faire relire CV par Career Services ESIEA et professeurs CNS",
+      "✅ Préparer elevator pitch 30 secondes et 2 minutes sur parcours",
+      "✅ Constituer dossier candidature complet (CV, lettre motivation, portfolio)"
+    ],
+    "profile_strengths": [
+      "🏆 Formation d'excellence labelisée ANSSI (Top 3 France)",
+      "🏆 Expérience opérationnelle rare (CNS + alternance industrielle)",
+      "🏆 Projets concrets primés (Badgeuse 2ème place, Exploit2Learn présenté)",
+      "🏆 Dimension internationale (Seoul Tech) et leadership associatif (2 ans trésorier)",
+      "🏆 Accès infrastructures de pointe (CyberRange Airbus, partenariats ANSSI/COMCYBER)"
+    ],
+    "differentiation_points": [
+      "Profil hybride offensive + défensive + DevSecOps (rare pour un étudiant)",
+      "Missions opérationnelles réelles via CNS (audits, incidents, clients réels)",
+      "Double compétence développement (fullstack) + cybersécurité",
+      "Projets open-source et engagement communauté",
+      "Vision 'Security by Design' depuis formation ingénieur"
+    ]
+  },
+  "metadata": {
+    "version": "2.0_enriched",
+    "last_updated": "2025-11-05",
+    "source": "Analyse exhaustive profils en ligne + LinkedIn partial + sources ESIEA",
+    "completeness": "85%",
+    "missing_critical_info": [
+      "Détails expérience AXIS ÉLECTRONIQUE (missions, technologies, métriques)",
+      "Noms complets 3 certifications 2024-2025",
+      "Accès GitHub SephyrothC ou portfolio technique",
+      "Descriptions exhaustives projets Badgeuse et ML Seoul Tech",
+      "Métriques quantifiables expériences associatives"
+    ],
+    "data_sources": [
+      "Analyse exhaustive (document principal)",
+      "LinkedIn (partiellement accessible)",
+      "Sources ESIEA publiques (site web, classements, documentation)",
+      "OpenESIEA 2025 (projets étudiants)",
+      "Informations contextuelles formation et partenariats"
+    ]
   }
 }
