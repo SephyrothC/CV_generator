@@ -63,9 +63,9 @@ TÂCHE : CV 1 PAGE - CONDENSÉ et IMPACTANT. Génère ce JSON :
   "selected_projects": ["id_proj1", "id_proj2"],
   "selected_skills": ["compétence1", "compétence2", ...8 max],
   "strengths": [
-    "Point fort court 1 (max 10 mots)",
-    "Point fort court 2 (max 10 mots)",
-    "Point fort court 3 (max 10 mots)"
+    "Point fort détaillé 1 avec CHIFFRES et technologies spécifiques (1-2 lignes complètes)",
+    "Point fort détaillé 2 avec MÉTRIQUES quantifiées et preuves concrètes (1-2 lignes)",
+    "Point fort détaillé 3 avec RÉALISATIONS mesurables et impact (1-2 lignes)"
   ],
   "custom_summary": "Résumé ULTRA-COURT de 2 phrases maximum (40 mots max). Direct et percutant.",
   "colors": {{"primary": "#1a73e8", "secondary": "#34a853"}}
@@ -85,10 +85,11 @@ RÈGLES STRICTES pour CV 1 PAGE :
    - Priorise celles mentionnées dans l'offre
    - PAS PLUS de 8 pour garder l'espace limité
 
-4. strengths : 3 points forts COURTS (max 10 mots chacun)
-   - Ultra-concis et impactants
-   - Liés directement au poste visé
-   - PAS de phrases longues - condensé maximum
+4. strengths : 3 points forts DÉTAILLÉS et QUANTIFIÉS (1-2 lignes chacun)
+   - OBLIGATOIRE : inclure des CHIFFRES/MÉTRIQUES (15+, 25%, 200+, x2, etc.)
+   - Mentionner des TECHNOLOGIES SPÉCIFIQUES du profil
+   - Donner des PREUVES concrètes (projets nommés, réalisations, présentations)
+   - Exemples : "Expert cybersécurité avec 15+ scénarios OWASP développés, présentés devant 200+ professionnels"
 
 5. custom_summary : 2 phrases MAXIMUM (40 mots total)
    - Résumé ultra-court et percutant
@@ -98,6 +99,18 @@ RÈGLES STRICTES pour CV 1 PAGE :
 6. colors : Couleurs professionnelles en hexadécimal
    - primary : couleur principale (si entreprise connue, utilise sa couleur de marque)
    - secondary : couleur secondaire complémentaire
+
+EXEMPLES DE BONS ATOUTS (À IMITER) :
+✅ "Expert cybersécurité avec 15+ scénarios OWASP développés, présentés devant 200+ professionnels lors de OpenESIEA, incluant détection XSS et injection SQL avec architecture Docker sécurisée"
+✅ "Développeur polyvalent maîtrisant C/C++/Python/TypeScript avec 10+ projets open-source sur GitHub (500+ stars), optimisation -25% consommation énergétique sur systèmes embarqués temps réel"
+✅ "Lead technique sur projets collaboratifs avec mise en place CI/CD complète (GitHub Actions, Docker, tests automatisés), réduction -40% bugs production, contribution active communauté open-source"
+
+EXEMPLES DE MAUVAIS ATOUTS (À ÉVITER) :
+❌ "Expert en cybersécurité" → Trop vague, pas de preuves
+❌ "Développeur polyvalent" → Pas de technologies mentionnées
+❌ "Bonne maîtrise de Docker" → Pas de métriques ni contexte
+
+CRITIQUE : Les atouts DOIVENT être LONGS (1-2 lignes), DÉTAILLÉS et inclure des CHIFFRES obligatoirement !
 
 IMPORTANT : Réponds UNIQUEMENT avec le JSON, rien d'autre."""
 

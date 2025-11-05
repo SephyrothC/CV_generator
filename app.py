@@ -145,8 +145,9 @@ def main():
         st.subheader("🎨 Template")
         template_choice = st.selectbox(
             "Choisir un template",
-            ["modern", "professional"],
-            index=0
+            ["modern_v2", "modern", "professional"],
+            index=0,
+            help="modern_v2 = Design amélioré avec barres de compétences, badges colorés et métriques en surbrillance"
         )
 
         st.divider()
